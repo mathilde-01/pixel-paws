@@ -1,0 +1,17 @@
+[
+    {
+      "name": "Max",
+      "location": 1,
+      "birthday": "2022-01-15T00:00:00Z",
+      "last_interaction": "2024-03-05T12:00:00Z",
+      "user_id": 1
+    },
+    {
+      "name": "Buddy",
+      "location": 0,
+      "birthday": "2020-11-20T00:00:00Z",
+      "last_interaction": "2024-03-04T15:30:00Z",
+      "user_id": 2
+    }
+  ]
+  
