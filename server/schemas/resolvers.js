@@ -35,7 +35,7 @@ const resolvers = {
       },
 
     // remove pet
-    removePet: async (parent, { petId }) => { // Changed PetId to petId for consistency
+    removePet: async (parent, { petId }) => { 
       return Pet.findOneAndDelete({ _id: petId });
     },
 
