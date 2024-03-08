@@ -19,6 +19,10 @@ const resolvers = {
   Mutation: {
     // add user
     addUser: async (parent, { name, email }) => {
+      const existingUser = await User.findOne({ email });
+      if (existingUser) {
+        throw new Error('User with this email already exists');
+      }
       return User.create({ name, email });
     },
     // add pet
@@ -31,8 +35,8 @@ const resolvers = {
       },
 
     // remove pet
-    removePet: async (parent, { PetId }) => {
-      return Pet.findByIdAndDelete(PetId);
+    removePet: async (parent, { petId }) => { // Changed PetId to petId for consistency
+      return Pet.findOneAndDelete({ _id: petId });
     },
 
     //update health
