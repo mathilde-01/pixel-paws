@@ -16,6 +16,7 @@ export default function Login({}) {
                             </div>
                         </div>
                     </div>
+                    <a className="waves-effect waves-light btn">LOGIN</a>
                 </form>
             </div>
         </>
