@@ -15,8 +15,16 @@ Pet.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    type: {
+      type: DataTypes.INTEGER, // Might want to store as string instead
+      allowNull: false,
+    },
     location: {
       type: DataTypes.INTEGER, // Might want to store as string instead
+      allowNull: false,
+    },
+    alive: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     birthday: {
