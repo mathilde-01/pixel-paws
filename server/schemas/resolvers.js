@@ -25,6 +25,15 @@ const resolvers = {
       }
       return User.create({ name, email });
     },
+    // add pet
+    addPet: async (parent, { petInput }) => {
+        const pet = new Pet({
+          name: petInput.name,
+        });
+        await pet.save();
+        return pet;
+      },
+
     // remove pet
     removePet: async (parent, { petId }) => { // Changed PetId to petId for consistency
       return Pet.findOneAndDelete({ _id: petId });
@@ -35,8 +44,8 @@ const resolvers = {
       parent,
       { healthId, fun, cleanliness, hunger, sleep }
     ) => {
-      return Health.findOneAndUpdate(
-        { _id: healthId },
+      return Health.findByIdAndUpdate(
+        { healthId },
         {
           $set: { fun, cleanliness, hunger, sleep },
         },
