@@ -1,4 +1,6 @@
-const typeDefs = `
+const { gql } = require("apollo-server");
+
+const typeDefs = gql`
   type User {
     _id: ID
     name: String
@@ -31,15 +33,16 @@ const typeDefs = `
     health(_id: ID!): Health
   }
   type Mutation {
-    addUser(
-        name: String!, 
-        email: String!
-        ): User
-    addPet(
-        name: String!, 
-        location: Int!, 
-        userId: ID!
-        ): Pet
+    addUser(name: String!, email: String!): User
+    removePet(PetId: ID!): Pet
+    updateHealth(
+      healthId: ID!
+      fun: Float
+      cleanliness: Float
+      hunger: Float
+      sleep: Float
+    ): Health
+  }
 `;
 
 module.exports = typeDefs;
