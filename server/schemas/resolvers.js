@@ -19,11 +19,20 @@ const resolvers = {
   Mutation: {
     // add user
     addUser: async (parent, { name, email }) => {
-      return User.User.create({ name, email });
+      return User.create({ name, email });
     },
+    // add pet
+    addPet: async (parent, { petInput }) => {
+        const pet = new Pet({
+          name: petInput.name,
+        });
+        await pet.save();
+        return pet;
+      },
+
     // remove pet
     removePet: async (parent, { PetId }) => {
-      return Pet.findOneAndDelete({ _id: PetId });
+      return Pet.findByIdAndDelete(PetId);
     },
 
     //update health
@@ -31,8 +40,8 @@ const resolvers = {
       parent,
       { healthId, fun, cleanliness, hunger, sleep }
     ) => {
-      return Health.findOneAndUpdate(
-        { _id: healthId },
+      return Health.findByIdAndUpdate(
+        { healthId },
         {
           $set: { fun, cleanliness, hunger, sleep },
         },
