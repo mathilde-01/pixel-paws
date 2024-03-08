@@ -1,23 +1,26 @@
-export default function Login({}) {
+export default function Login({ }) {
     return (
         <>
-            <h2>Log-In</h2>
-            <div className="row">
-                <form className="col s12">
-                    <div className="row">
-                        <div className="input-field col s6">
-                            <input placeholder="User Name" id="user_name" type="text" className="validate"></input>
-                                <label htmlFor="user_name">User Name</label>
-                        </div>
+            <div className="formContainer">
+                <h5>LOGIN</h5>
+                <div className="row">
+                    <form>
                         <div className="row">
-                            <div className="input-field col s12">
-                                <input id="password" type="password" className="validate"></input>
+                            <div className="input-field col s6">
+                                <input placeholder="User Name" id="user_name" type="text" className="validate"></input>
+                                <label htmlFor="user_name">User Name</label>
+                            </div>
+                            <div className="row">
+                                <div className="input-field col s12">
+                                    <input id="password" type="password" className="validate"></input>
                                     <label htmlFor="password">Password</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <a className="waves-effect waves-light btn">LOGIN</a>
-                </form>
+                        <button className="btn" name="action">LOGIN
+                        </button>
+                    </form>
+                </div>
             </div>
         </>
     )
