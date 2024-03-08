@@ -1,9 +1,10 @@
 export default function SignUp({ }) {
     return (
         <>
-            <h2>Sign-Up</h2>
+         <div className="formContainer">
+         <h5>WELCOME!</h5>
             <div className="row">
-                <form className="col s12">
+                <form>
                     <div className="row">
                         <div className="input-field col s6">
                             <input placeholder="User Name" id="user_name" type="text" className="validate"></input>
@@ -22,11 +23,12 @@ export default function SignUp({ }) {
                             </div>
                         </div>
                     </div>
-                    <button className="btn waves-effect waves-light" type="submit" name="action">SIGNUP
+                    <button className="btn" type="submit" name="action">SIGNUP
                         <i className="material-icons right">send</i>
                     </button>
                 </form>
             </div>
+        </div>
         </>
     )
 }
