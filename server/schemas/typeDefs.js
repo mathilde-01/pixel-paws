@@ -25,6 +25,7 @@ const typeDefs = gql`
     sleep: Float
     pet: Pet
   }
+  
   type Query {
     users: [User]
     user(_id: ID!): User
@@ -32,9 +33,10 @@ const typeDefs = gql`
     pet(_id: ID!): Pet
     health(_id: ID!): Health
   }
+  
   type Mutation {
     addUser(name: String!, email: String!): User
-    removePet(PetId: ID!): Pet
+    removePet(petId: ID!): Pet
     updateHealth(
       healthId: ID!
       fun: Float
