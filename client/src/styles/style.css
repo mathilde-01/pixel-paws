@@ -1,21 +1,195 @@
-*{
-   
+* {
+
 }
 
-body{
+body {
     background-color: #907AD6;
+    font-family: "Red Hat Mono", monospace;
 }
 
-.nav-wrapper{
+    /* Navbar */
+.nav-wrapper {
     background-color: #2C2A4A;
-    padding-left: 2%;
-    /* text-indent: 1%; */
-   
     font-family: "Silkscreen", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-.material-icons{
-    color: #2C2A4A;
+    /* Navbar */
+.right {
+    font-family: "Red Hat Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    padding-right: 2%;
+    ;
+}
+    /* Navbar */
+.brand-logo {
+    width: 300px;
+    margin-left: 5%;
+
+}
+
+
+
+@media screen and (max-width: 1920px) {
+    h2 {
+        margin-left: 10%;
+        font-size: 45px;
+        color: #faba6d;
+        font-weight: 600;
+    }
+
+        /* Navbar */
+    .row {
+        margin-top: 40px;
+        width: 700px;
+     
+    }
+
+}
+
+
+@media screen and (max-width: 1728px) {
+    h2 {
+        margin-left: 10%;
+        font-size: 45px;
+        color: #faba6d;
+        font-weight: 600;
+    }
+
+    /* Navbar */
+    .row {
+        margin-top: 40px;
+        width: 700px;
+    }
+
+}
+
+@media screen and (max-width: 1512px) {
+    h2 {
+        margin-left: 10%;
+        font-size: 35px;
+        color: #faba6d;
+        font-weight: 600;
+    }
+
+        /* Navbar */
+    .row {
+        margin-top: 40px;
+        width: 550px;
+    }
+
+}
+
+@media screen and (max-width: 1440px) {
+    h2 {
+        margin-left: 10%;
+        font-size: 35px;
+        color: #faba6d;
+        font-weight: 600;
+    }
+
+        /* Navbar */
+    .row {
+        margin-top: 30px;
+        width: 550px;
+    }
+
+}
+
+@media screen and (max-width: 1280px) {
+    h2 {
+        margin-left: 10%;
+        font-size: 35px;
+        color: #faba6d;
+        font-weight: 600;
+    }
+
+    /* Navbar */
+    .row {
+        margin-top: 30px;
+        width: 550px;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    h2 {
+        margin-left: 10%;
+        font-size: 35px;
+        color: #faba6d;
+        font-weight: 600;
+    }
+
+    /* Navbar */
+    .row {
+        margin-top: 30px;
+        width: 550px;
+    }
+
+}
+
+@media screen and (max-width: 834px) {
+    h2 {
+        margin-left: 10%;
+        font-size: 30px;
+        color: #faba6d;
+        font-weight: 600;
+    }
+
+        /* Navbar */
+    .row {
+        margin-top: 30px;
+        width: 450px;
+    }
+
+}
+
+@media screen and (max-width: 744px) {
+    h2 {
+        margin-left: 10%;
+        font-size: 30px;
+        color: #faba6d;
+        font-weight: 600;
+    }
+
+        /* Navbar */
+    .row {
+        margin-top: 20px;
+        width: 400px;
+    }
+
+}
+
+@media screen and (max-width: 430px) {
+    h2 {
+        margin-left: 10%;
+        font-size: 25px;
+        color: #faba6d;
+        font-weight: 600;
+    }
+
+        /* Navbar */
+    .row {
+        margin-top: 30px;
+        width: 275px;
+    }
+
+}
+
+@media screen and (max-width: 360px) {
+    h2 {
+        margin-left: 10%;
+        font-size: 20px;
+        color: #faba6d;
+        font-weight: 600;
+    }
+
+    /* Navbar */
+    .row {
+        margin-top: 20px;
+        width: 225px;
+    }
+
 }
