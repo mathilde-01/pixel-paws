@@ -1,4 +1,4 @@
-import './style.css';
+import '../../styles/style.css';
 
 function LoginForm({submitHandler, changeHandler, emailState, passwordState}) {
   return (
