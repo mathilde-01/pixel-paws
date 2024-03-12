@@ -1,7 +1,7 @@
 // seed.js
 const fs = require('fs');
-const { User, Pet, Health } = require('./models');
-const sequelize = require('./config/connection');
+const { User, Pet, Health } = require('../models');
+const sequelize = require('../config/connection');
 
 // Function to read JSON data from a file
 const readJsonFile = (filePath) => {
