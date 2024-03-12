@@ -2,21 +2,23 @@ const User = require('./user');
 const Pet = require('./Pet');
 const Health = require('./Health');
 
-// Define associations
-User.hasMany(Pet, {
-  foreignKey: 'user_id',
+// Define associations using Mongoose schema references
+Pet.schema.add({
+  user_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 });
 
-Pet.belongsTo(User, {
-  foreignKey: 'user_id',
+Health.schema.add({
+  pet_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Pet'
+  }
 });
 
-Pet.hasOne(Health, {
-  foreignKey: 'pet_id',
-});
+const UserModel = mongoose.model('User', User.schema);
+const PetModel = mongoose.model('Pet', Pet.schema);
+const HealthModel = mongoose.model('Health', Health.schema);
 
-Health.belongsTo(Pet, {
-  foreignKey: 'pet_id',
-});
-
-module.exports = { User, Pet, Health };
+module.exports = { UserModel, PetModel, HealthModel };

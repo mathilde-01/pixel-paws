@@ -1,46 +1,28 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const mongoose = require('mongoose');
 
-class Health extends Model { }
-
-Health.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    fun: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    cleanliness: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    hunger: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    sleep: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    pet_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'pet',
-        key: 'id',
-      },
-    },
+const healthSchema = new mongoose.Schema({
+  fun: {
+    type: Number,
+    required: true
   },
-  {
-    sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'Health',
+  cleanliness: {
+    type: Number,
+    required: true
+  },
+  hunger: {
+    type: Number,
+    required: true
+  },
+  sleep: {
+    type: Number,
+    required: true
+  },
+  pet_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Pet'
   }
-);
+});
+
+const Health = mongoose.model('Health', healthSchema);
 
 module.exports = Health;
