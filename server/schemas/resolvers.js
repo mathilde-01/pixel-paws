@@ -1,33 +1,35 @@
-const { Health, Pet, User } = require("../models");
+const { HealthModel, PetModel, UserModel } = require("../models");
 
 const resolvers = {
   Query: {
     // finds all pets
     pets: async () => {
-      return Pet.find();
+      return PetModel.find();
     },
     // find pet by id
-    pet: async (parent, { ID }) => {
-      return Pet.findOne({ _id: ID }).populate("user");
+    pet: async (parent, id ) => {
+      console.log(id);
+      //return PetModel.findOne({ _id: id });
+      return PetModel.findOne({ _id: id }).populate("user");
     },
     // finds user
     users: async (parent, {}) => {
-      return User.find().populate("pets");
+      return UserModel.find().populate("pets");
     },
   },
 
   Mutation: {
     // add user
     addUser: async (parent, { name, email }) => {
-      const existingUser = await User.findOne({ email });
+      const existingUser = await UserModel.findOne({ email });
       if (existingUser) {
         throw new Error('User with this email already exists');
       }
-      return User.create({ name, email });
+      return UserModel.create({ name, email });
     },
     // add pet
     addPet: async (parent, { petInput }) => {
-        const pet = new Pet({
+        const pet = new PetModel({
           name: petInput.name,
         });
         await pet.save();
@@ -36,7 +38,7 @@ const resolvers = {
 
     // remove pet
     removePet: async (parent, { petId }) => { 
-      return Pet.findOneAndDelete({ _id: petId });
+      return PetModel.findOneAndDelete({ _id: petId });
     },
 
     //update health
@@ -44,7 +46,7 @@ const resolvers = {
       parent,
       { healthId, fun, cleanliness, hunger, sleep }
     ) => {
-      return Health.findByIdAndUpdate(
+      return HealthModel.findByIdAndUpdate(
         { healthId },
         {
           $set: { fun, cleanliness, hunger, sleep },
