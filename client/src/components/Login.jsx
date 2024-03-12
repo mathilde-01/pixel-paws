@@ -7,7 +7,7 @@ export default function Login({ }) {
                     <form>
                         <div className="row">
                             <div className="input-field col s6">
-                                <input placeholder="User Name" id="user_name" type="text" className="validate"></input>
+                                <input id="user_name" type="text" className="validate"></input>
                                 <label htmlFor="user_name">User Name</label>
                             </div>
                             <div className="row">

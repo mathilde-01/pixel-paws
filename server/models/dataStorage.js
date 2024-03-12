@@ -1,7 +1,8 @@
-const { User, Pet, Health } = require('./models');
+const { User, Pet, Health } = require('../models');
 
 function storeUser(dataToStore, callback) {
-  User.create(dataToStore)
+  const newUser = new User(dataToStore);
+  newUser.save()
     .then(result => {
       callback(null, result);
     })
@@ -12,7 +13,8 @@ function storeUser(dataToStore, callback) {
 }
 
 function storePet(dataToStore, callback) {
-  Pet.create(dataToStore)
+  const newPet = new Pet(dataToStore);
+  newPet.save()
     .then(result => {
       callback(null, result);
     })
@@ -23,7 +25,8 @@ function storePet(dataToStore, callback) {
 }
 
 function storeHealth(dataToStore, callback) {
-  Health.create(dataToStore)
+  const newHealth = new Health(dataToStore);
+  newHealth.save()
     .then(result => {
       callback(null, result);
     })

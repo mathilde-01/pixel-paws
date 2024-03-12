@@ -43,10 +43,11 @@ body {
     display: flex;
     font-family: "Silkscreen", sans-serif;
     margin-top: 40px;
-    width: 325px;
+    width: 85vw;
     background-color: #4f518c;
     margin-left: 7%;
     border-radius: 10px;
+    padding-bottom: 10px;
 }
 
 .input-field {
@@ -121,6 +122,19 @@ body {
 
     }
 
+}
+
+.margin-top-50 {
+    margin-top: 50px;
+}
+
+footer {
+    position: absolute;
+    background-color: #2C2A4A;
+    color: white;
+    width: 100vw;
+    text-align: center;
+    bottom: 0;
 }
 
 
@@ -437,7 +451,7 @@ body {
         padding-bottom: 0px;
     }
 
-    /* Navbar */
+    /* input fields */
     .row {
         margin-top: 30px;
         width: 275px;
@@ -447,7 +461,7 @@ body {
     .formContainer {
         font-family: "Silkscreen", sans-serif;
         margin-top: 40px;
-        width: 325px;
+        width: 85vw;
         background-color: #4f518c;
         margin-left: 7%;
         border-radius: 10px;
@@ -463,8 +477,7 @@ body {
     .btn {
         background-color: #2C2A4A;
         font-family: "Silkscreen", sans-serif;
-        margin-left: 33%;
-
+        margin-left: 1%;
     }
 
 
@@ -493,7 +506,7 @@ body {
     .formContainer {
         font-family: "Silkscreen", sans-serif;
         margin-top: 40px;
-        width: 325px;
+        width: 85vw;
         background-color: #4f518c;
         margin-left: 7%;
         border-radius: 10px;
