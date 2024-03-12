@@ -5,9 +5,7 @@ import Footer from "../components/Footer";
 export default function DisplayPage(){
     return(
         <div>
-            <Navbar/>
             <Display/>
-            <Footer/>
         </div>
     )
 }
