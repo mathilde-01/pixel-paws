@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const User = require('./models/User');
-const Pet = require('./models/Pet');
-const Health = require('./models/Health');
+const User = require('../models/User');
+const Pet = require('../models/Pet');
+const Health = require('../models/Health');
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/your_database', { useNewUrlParser: true, useUnifiedTopology: true })

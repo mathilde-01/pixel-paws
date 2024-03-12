@@ -1,4 +1,4 @@
-const { Health, Pet, User } = require("..models");
+const { Health, Pet, User } = require("../models");
 
 const resolvers = {
   Query: {
