@@ -11,8 +11,9 @@ function App() {
        
             <main id="main">
                 <Outlet />
+                <Footer />
             </main>
-            <Footer id="footer" />
+            
         </>
     );
   }

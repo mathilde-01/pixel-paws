@@ -4,8 +4,10 @@ body {
     background-color: #907AD6;
     font-family: "Red Hat Mono", monospace;
     /* display: flex; materialize says to do this but its not working */
-    /* min-height: 100vh; */
-    float: column;
+    min-height: 100vh;
+    flex-direction: column;
+
+
 }
 
 main {
@@ -13,28 +15,26 @@ main {
 }
 
 footer {
+
     font-family: "Red Hat Mono", monospace;
     position: absolute;
-    background-color: #2C2A4A;
     color: white;
-    width: 100%;
+    width: 100%;   /*this changes footer width*/
     text-align: center;
-    bottom: 0;
-    height: 40px;
+    bottom: 0px;
+  
 }
 
-/* footer style */
+/* inside footer style */
 .container {
-    background-color: #2C2A4A;
+    background-color: #333457;
+  
 
 }
 
-.footer-copyright {
-    background-color: #2C2A4A;
-}
 
 .page-footer {
-    background-color: #4f518c;
+    background-color: #2C2A4A;
 }
 
 /* Navbar */
@@ -78,9 +78,7 @@ footer {
 
 }
 
-.margin-top-50 {
-    margin-top: 50px;
-}
+
 
 #user_name {
     font-family: "Silkscreen", sans-serif;
