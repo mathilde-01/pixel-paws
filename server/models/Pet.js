@@ -1,65 +1,42 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const mongoose = require('mongoose');
 
-class Pet extends Model { }
-
-Pet.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    type: {
-      type: DataTypes.INTEGER, // Might want to store as string instead
-      allowNull: false,
-    },
-    location: {
-      type: DataTypes.INTEGER, // Might want to store as string instead
-      allowNull: false,
-    },
-    alive: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    birthday: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW // Sets the default value to the current timestamp
-    },
-    last_interaction: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW // Set default value to current timestamp
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-    health_id: {
-      type: DataTypes.INTEGER,
-      references: { 
-        model: 'health',
-        key: 'id',
-      },
-    },
+const petSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
   },
-  {
-    sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'Pet',
+  type: {
+    type: String,
+    required: true
+  },
+  location: {
+    type: String,
+    required: true
+  },
+  alive: {
+    type: Boolean,
+    required: true
+  },
+  birthday: {
+    type: Date,
+    required: true,
+    default: Date.now // Sets the default value to the current timestamp
+  },
+  last_interaction: {
+    type: Date,
+    required: true,
+    default: Date.now // Sets the default value to the current timestamp
+  },
+  user_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  health_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Health'
   }
-);
+});
 
+const Pet = mongoose.model('Pet', petSchema);
 
 module.exports = Pet;
-
