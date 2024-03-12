@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './app.jsx'
 import './styles/style.css'
-
-import '/index.html'
 import SignUpPage from './pages/SignUpPage';
 import LoginPage from './pages/LoginPage';
 import PetCreationPage from './pages/PetCreationPage'
@@ -26,7 +24,7 @@ const router = createBrowserRouter([
         element: <LoginPage />
       }, {
         path: '/signup',
-        element: <SignupPage />
+        element: <SignUpPage />
       }, {
         path: '/petCreation',
         element: <PetCreationPage />
