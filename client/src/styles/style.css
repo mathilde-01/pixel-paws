@@ -1,18 +1,40 @@
-* {
-   
-}
+* {}
 
 body {
     background-color: #907AD6;
     font-family: "Red Hat Mono", monospace;
-    /* display: flex; */
+    /* display: flex; materialize says to do this but its not working */
     /* min-height: 100vh; */
     float: column;
 }
 
-/* main{
+main{
     flex: 1 0 auto;
-} */
+}
+
+footer {
+    font-family: "Red Hat Mono", monospace;
+    position: absolute;
+    background-color: #2C2A4A;
+    color: white;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    height: 40px;
+}
+
+.container{
+    background-color: #2C2A4A;
+  
+}
+
+.footer-copyright{
+    background-color: #2C2A4A;
+}
+
+.page-footer{
+    background-color: #4f518c;
+}
 
 /* Navbar */
 .nav-wrapper {
@@ -20,7 +42,7 @@ body {
     font-family: "Silkscreen", sans-serif;
     font-weight: 400;
     font-style: normal;
-    display: flex;;
+
 }
 
 /* Navbar */
@@ -29,26 +51,16 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     padding-right: 2%;
-    ;
+
 }
 
-/* Navbar */
+/* Navbar -Pixel Pals*/
 .brand-logo {
     width: 300px;
     margin-left: 5%;
 
 }
 
-.formContainer {
-    display: flex;
-    font-family: "Silkscreen", sans-serif;
-    margin-top: 40px;
-    width: 85vw;
-    background-color: #4f518c;
-    margin-left: 7%;
-    border-radius: 10px;
-    padding-bottom: 10px;
-}
 
 .input-field {
     background-color: white;
@@ -64,24 +76,20 @@ body {
 
 }
 
-/* .page-footer{
-   
-    background-color: #2C2A4A;
-    font-family: "Red Hat Mono";
-} */
+.margin-top-50 {
+    margin-top: 50px;
+}
 
-/* .container{
-    margin: 20px;
-} */
-
-#user_name{
+#user_name {
     font-family: "Silkscreen", sans-serif;
 
 }
 
 
 
+
 @media screen and (max-width: 1920px) {
+
     /* form welcome */
     h5 {
         color: white;
@@ -124,18 +132,8 @@ body {
 
 }
 
-.margin-top-50 {
-    margin-top: 50px;
-}
 
-footer {
-    position: absolute;
-    background-color: #2C2A4A;
-    color: white;
-    width: 100vw;
-    text-align: center;
-    bottom: 0;
-}
+
 
 
 @media screen and (max-width: 1728px) {
@@ -527,6 +525,6 @@ footer {
 
     }
 
- 
+
 
 }
