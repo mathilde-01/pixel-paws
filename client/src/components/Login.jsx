@@ -2,7 +2,7 @@ export default function Login({ }) {
     return (
         <>
             <div className="formContainer">
-                <h5>LOGIN</h5>
+                <h5>WELCOME BACK!</h5>
                 <div className="row">
                     <form>
                         <div className="row">

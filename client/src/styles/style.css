@@ -1,11 +1,18 @@
-* {}
+* {
+   
+}
 
 body {
     background-color: #907AD6;
     font-family: "Red Hat Mono", monospace;
+    /* display: flex; */
+    /* min-height: 100vh; */
+    float: column;
 }
 
-
+/* main{
+    flex: 1 0 auto;
+} */
 
 /* Navbar */
 .nav-wrapper {
@@ -13,6 +20,7 @@ body {
     font-family: "Silkscreen", sans-serif;
     font-weight: 400;
     font-style: normal;
+    display: flex;;
 }
 
 /* Navbar */
@@ -32,6 +40,7 @@ body {
 }
 
 .formContainer {
+    display: flex;
     font-family: "Silkscreen", sans-serif;
     margin-top: 40px;
     width: 85vw;
@@ -55,6 +64,16 @@ body {
 
 }
 
+/* .page-footer{
+   
+    background-color: #2C2A4A;
+    font-family: "Red Hat Mono";
+} */
+
+/* .container{
+    margin: 20px;
+} */
+
 #user_name{
     font-family: "Silkscreen", sans-serif;
 
@@ -63,7 +82,6 @@ body {
 
 
 @media screen and (max-width: 1920px) {
-
     /* form welcome */
     h5 {
         color: white;
@@ -452,7 +470,7 @@ footer {
     .input-field {
         background-color: white;
         border-radius: 10px;
-        color: #2C2A4A;
+        /* color: #2C2A4A; */
         height: 45px;
     }
 
@@ -499,6 +517,7 @@ footer {
         border-radius: 10px;
         color: #2C2A4A;
         height: 45px;
+        /* width: 200px; */
     }
 
     .btn {
@@ -507,5 +526,7 @@ footer {
         margin-left: 31%;
 
     }
+
+ 
 
 }
