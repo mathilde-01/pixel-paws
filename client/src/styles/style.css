@@ -19,20 +19,21 @@ footer {
     font-family: "Red Hat Mono", monospace;
     position: absolute;
     color: white;
-    width: 100%;   /*this changes footer width*/
+    width: 100%;
+    /*this changes footer width*/
     text-align: center;
     bottom: 0px;
-  
+
 }
 
 /* inside footer style */
 .container {
     background-color: #333457;
-  
+
 
 }
 
-
+/* footer style */
 .page-footer {
     background-color: #2C2A4A;
 }
@@ -47,7 +48,7 @@ footer {
 
 }
 
-/* Navbar */
+/* Navbar right side*/
 .right {
     font-family: "Red Hat Mono", monospace;
     font-optical-sizing: auto;
@@ -63,7 +64,7 @@ footer {
 
 }
 
-
+/* style for input */
 .input-field {
     background-color: white;
     border-radius: 10px;
@@ -78,8 +79,67 @@ footer {
 
 }
 
+.petCircle {
+    margin-left: 17%;
+    margin-top: 10%;
+    width: 250px;
+    border: 5px solid #7fdeff;
+    height: 250px;
+    border-radius: 50%;  
+}
 
+.petStand{
+    margin-top: 0px;
+    bottom: 0;
+    width: 100px;
+    border: 3px solid #7fdeff;
+    margin-left: 37%;
+    height: 30px;
+    
 
+}
+
+.btnContainer{
+    width: 400px;
+    margin-left: 7%;
+    margin-top: 20px;
+    font-family: "Silkscreen", sans-serif;
+    justify-content: space-between;
+}
+
+.healthContainer{
+    width: 350px;
+    height: 150px;
+    margin-left: 3.5%;
+    margin-top: 15px;
+    border-radius: 7px;
+    font-family: "Silkscreen", sans-serif;
+    justify-content: space-between;
+    border: 1px solid transparent;
+    background-color: #4f518c;
+}
+
+/* specify green color - used on buttons */
+#greenColor{
+    background-color: #6cbf46;
+}
+
+/* specify green color - used on buttons */
+#blueColor{
+    background-color: #7fdeff;
+}
+
+/* specify green color - used on buttons */
+#medPurpleColor{
+    background-color: #4f518c;
+}
+
+/* specify green color - used on buttons */
+#orangeColor{
+    background-color: #faba6d;
+}
+
+/* specify font on username input */
 #user_name {
     font-family: "Silkscreen", sans-serif;
 
@@ -140,8 +200,6 @@ footer {
     }
 
 }
-
-
 
 
 
