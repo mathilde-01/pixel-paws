@@ -1,5 +1,6 @@
 export default function Footer(){
     return (
+        <main>
         <footer className="page-footer">
         <div className="container">
           <div className="row">
@@ -25,5 +26,6 @@ export default function Footer(){
           </div>
         </div>
       </footer>
+      </main>
     )
 }
