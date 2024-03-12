@@ -1,4 +1,4 @@
-const { User, Pet, Health } = require('./models');
+const { User, Pet, Health } = require('../models');
 
 function storeUser(dataToStore, callback) {
   const newUser = new User(dataToStore);

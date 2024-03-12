@@ -1,4 +1,4 @@
-const User = require('./user');
+const User = require('./User');
 const Pet = require('./Pet');
 const Health = require('./Health');
 
