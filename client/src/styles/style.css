@@ -8,7 +8,7 @@ body {
     float: column;
 }
 
-main{
+main {
     flex: 1 0 auto;
 }
 
@@ -23,16 +23,17 @@ footer {
     height: 40px;
 }
 
-.container{
+/* footer style */
+.container {
     background-color: #2C2A4A;
-  
+
 }
 
-.footer-copyright{
+.footer-copyright {
     background-color: #2C2A4A;
 }
 
-.page-footer{
+.page-footer {
     background-color: #4f518c;
 }
 
@@ -42,6 +43,7 @@ footer {
     font-family: "Silkscreen", sans-serif;
     font-weight: 400;
     font-style: normal;
+    width: 100%;
 
 }
 
@@ -103,6 +105,15 @@ footer {
     .row {
         margin-top: 40px;
         width: 700px;
+
+    }
+
+    /* Navbar */
+    .right {
+        font-family: "Red Hat Mono", monospace;
+        font-optical-sizing: auto;
+        font-style: normal;
+        padding-right: 2%;
 
     }
 
@@ -276,6 +287,16 @@ footer {
         padding-bottom: 0px;
     }
 
+    /* right side navbar */
+    .right {
+        font-family: "Red Hat Mono", monospace;
+        font-optical-sizing: auto;
+        font-style: normal;
+        padding-right: 5%;
+
+    }
+
+
     /* Navbar */
     .row {
         margin-top: 30px;
@@ -319,6 +340,14 @@ footer {
         padding-bottom: 0px;
     }
 
+    /* right side navbar */
+    .right {
+        font-family: "Red Hat Mono", monospace;
+        font-optical-sizing: auto;
+        font-style: normal;
+        padding-right: 5%;
+
+    }
 
     /* Navbar */
     .row {
@@ -332,7 +361,7 @@ footer {
         margin-top: 40px;
         width: 700px;
         background-color: #4f518c;
-        margin-left: 18%;
+        margin-left: 15%;
         border-radius: 10px;
     }
 
@@ -354,6 +383,15 @@ footer {
 
 @media screen and (max-width: 834px) {
 
+    /* Navbar */
+    .right {
+        font-family: "Red Hat Mono", monospace;
+        font-optical-sizing: auto;
+        font-style: normal;
+        padding-right: 2%;
+
+    }
+
     /* form welcome */
     h5 {
         color: white;
@@ -363,7 +401,7 @@ footer {
         padding-bottom: 0px;
     }
 
-    /* Navbar */
+    /* Navbar also effects input width */
     .row {
         margin-top: 30px;
         width: 450px;
@@ -418,7 +456,7 @@ footer {
         margin-top: 40px;
         width: 500px;
         background-color: #4f518c;
-        margin-left: 18%;
+        margin-left: 14%;
         border-radius: 10px;
     }
 
@@ -459,9 +497,9 @@ footer {
     .formContainer {
         font-family: "Silkscreen", sans-serif;
         margin-top: 40px;
-        width: 85vw;
+        width: 300px;
         background-color: #4f518c;
-        margin-left: 7%;
+        margin-left: 16%;
         border-radius: 10px;
     }
 
@@ -470,14 +508,61 @@ footer {
         border-radius: 10px;
         /* color: #2C2A4A; */
         height: 45px;
+        width: 150px;
     }
 
     .btn {
         background-color: #2C2A4A;
         font-family: "Silkscreen", sans-serif;
-        margin-left: 1%;
+        margin-left: 35%;
     }
 
+
+}
+
+@media screen and (max-width: 390px) {
+
+    /* form welcome */
+    h5 {
+        color: white;
+        margin-left: 30%;
+        width: 80px;
+        padding-top: 25px;
+        padding-bottom: 0px;
+    }
+
+
+    /* Navbar */
+    .row {
+        /* margin-top: 20px; */
+        width: 200px;
+    }
+
+    /* sign-in and log-in container */
+
+    .formContainer {
+        font-family: "Silkscreen", sans-serif;
+        margin-top: 40px;
+        width: 275px;
+        background-color: #4f518c;
+        margin-left: 14%;
+        border-radius: 10px;
+    }
+
+    .input-field {
+        background-color: white;
+        border-radius: 10px;
+        color: #2C2A4A;
+        height: 45px;
+        /* width: 200px; */
+    }
+
+    .btn {
+        background-color: #2C2A4A;
+        font-family: "Silkscreen", sans-serif;
+        margin-left: 30%;
+
+    }
 
 }
 
@@ -504,7 +589,7 @@ footer {
     .formContainer {
         font-family: "Silkscreen", sans-serif;
         margin-top: 40px;
-        width: 85vw;
+        width: 250px;
         background-color: #4f518c;
         margin-left: 7%;
         border-radius: 10px;
