@@ -17,12 +17,12 @@ main {
 footer {
 
     font-family: "Red Hat Mono", monospace;
-    position: absolute;
-    color: white;
-    width: 100%;
+    /* position: absolute; */
+    /* color: white;
+    width: 100%; */
     /*this changes footer width*/
-    text-align: center;
-    bottom: 0px;
+    /* text-align: center;
+    bottom: 0px; */
 
 }
 

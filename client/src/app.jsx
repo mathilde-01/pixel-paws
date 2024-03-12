@@ -10,10 +10,10 @@ function App() {
         <>
        
             <main id="main">
+                <Navbar/>
                 <Outlet />
                 <Footer />
             </main>
-            
         </>
     );
   }
