@@ -1,6 +1,4 @@
-const { gql } = require("apollo-server");
-
-const typeDefs = gql`
+const typeDefs = `
   type User {
     _id: ID
     name: String
@@ -36,6 +34,7 @@ const typeDefs = gql`
   
   type Mutation {
     addUser(name: String!, email: String!): User
+    addPet(name: String!, location: Int, birthday: String, last_interaction: String): Pet
     removePet(petId: ID!): Pet
     updateHealth(
       healthId: ID!
