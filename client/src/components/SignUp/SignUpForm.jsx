@@ -1,8 +1,10 @@
-export default function SignUpForm({}) {
+import '../../styles/style.css'
+
+export default function SignUpForm({ }) {
     return (
-        // <>
-         <div className="formContainer">
-         <h5>WELCOME!</h5>
+
+        <div className="formContainer">
+            <h5>WELCOME!</h5>
             <div className="row center">
                 <form>
                     <div className="row">
@@ -27,6 +29,7 @@ export default function SignUpForm({}) {
                 </form>
             </div>
         </div>
-        // </>
+     
+
     )
 }

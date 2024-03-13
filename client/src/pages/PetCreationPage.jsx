@@ -4,8 +4,8 @@ import Footer from "../components/Footer";
 
 export default function PetCreationPage(){
     return(
-        <div>
+     
             <ChoosePetForm/>
-        </div>
+      
     )
 }

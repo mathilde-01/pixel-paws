@@ -49,17 +49,19 @@ function Login() {
       [name] : value
     })
   }
-  // {submitHandler, changeHandler, emailState, passwordState}
+ 
   return (
-    <>
-      <h2>Login</h2>
+    
+
+      <div className="formPage">
       <LoginForm 
         submitHandler={submitHandler}
         changeHandler={changeHandler}
         emailState={formState.email}
         passwordState={formState.password}
       />
-    </>
+      </div>
+    
   )
 }
 
