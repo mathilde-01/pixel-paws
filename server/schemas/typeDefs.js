@@ -27,8 +27,8 @@ const typeDefs = `
   type Query {
     users: [User]
     user(_id: ID!): User
-    pets: [Pet]
-    pet(_id: ID!): Pet
+    allPets: [Pet]
+    petById(_id: ID!): Pet
     health(_id: ID!): Health
   }
   
