@@ -1,6 +1,6 @@
-export default function SignUpForm({ }) {
+export default function SignUpForm({}) {
     return (
-        <>
+        // <>
          <div className="formContainer">
          <h5>WELCOME!</h5>
             <div className="row center">
@@ -10,7 +10,7 @@ export default function SignUpForm({ }) {
                             <input id="Email" type="text" className="validate"></input>
                             <label htmlFor="Email">Email</label>
                         </div>
-                        <div className="row">
+                        <div>
                             <div className="input-field col s12">
                                 <input id="password" type="password" className="validate"></input>
                                 <label htmlFor="password">Password</label>
@@ -27,6 +27,6 @@ export default function SignUpForm({ }) {
                 </form>
             </div>
         </div>
-        </>
+        // </>
     )
 }

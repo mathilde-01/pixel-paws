@@ -9,13 +9,17 @@ const resolvers = {
     // find pet by id
     petById: async (parent, id ) => {
       console.log(id);
-      //return PetModel.findOne({ _id: id });
-      return PetModel.findOne({ _id: id }).populate("user");
+      return PetModel.findOne({ _id: id }).populate("health").populate("user");
+      //return PetModel.findOne({ _id: id }).populate("health");
     },
     // finds user
-    users: async (parent, {}) => {
-      return UserModel.find().populate("pets");
+    user: async (parent, id ) => {
+      return UserModel.findOne({ _id: id })
+      //return UserModel.findOne({ _id: id }).populate("pets");
     },
+    health: async (parent, {}) => {
+      return HealthModel.find();
+    }
   },
 
   Mutation: {

@@ -9,6 +9,16 @@ const {mongoose, Schema} = require('mongoose');
 //   user_id: {
 //     type: mongoose.Schema.Types.ObjectId,
 //     ref: 'User'
+//   },
+//   health_id: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: 'Health'
+//   }
+// });
+// Pet.schema.add({
+//   user_id: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: 'User'
 //   }
 // });
 

@@ -1,36 +1,26 @@
-* {}
+
 
 body {
     background-color: #907AD6;
     font-family: "Red Hat Mono", monospace;
-    /* display: flex; materialize says to do this but its not working */
     min-height: 100vh;
     flex-direction: column;
-
 
 }
 
 main {
     flex: 1 0 auto;
+    width: 100vw;
 }
 
 footer {
-
     font-family: "Red Hat Mono", monospace;
-    /* position: absolute; */
-    /* color: white;
-    width: 100%; */
-    /*this changes footer width*/
-    /* text-align: center;
-    bottom: 0px; */
-
+    margin-top: 50px;
 }
 
 /* inside footer style */
 .container {
     background-color: #333457;
-
-
 }
 
 /* footer style */
@@ -45,6 +35,7 @@ footer {
     font-weight: 400;
     font-style: normal;
     width: 100%;
+    margin-bottom: 50px;
 
 }
 
@@ -75,31 +66,34 @@ footer {
 .btn {
     background-color: #2C2A4A;
     font-family: "Silkscreen", sans-serif;
-    margin-left: 31%;
+    /* margin-left: 31%; */
 
 }
 
+/* where pet lives in circle on display page */
 .petCircle {
     margin-left: 17%;
     margin-top: 10%;
     width: 250px;
     border: 5px solid #7fdeff;
     height: 250px;
-    border-radius: 50%;  
+    border-radius: 50%;
 }
 
-.petStand{
+/* stand for circle - design */
+.petStand {
     margin-top: 0px;
     bottom: 0;
     width: 100px;
     border: 3px solid #7fdeff;
     margin-left: 37%;
     height: 30px;
-    
+
 
 }
 
-.btnContainer{
+/* container holding buttons on display pages */
+.btnContainer {
     width: 400px;
     margin-left: 7%;
     margin-top: 20px;
@@ -107,7 +101,8 @@ footer {
     justify-content: space-between;
 }
 
-.healthContainer{
+/* container holding life/health levels */
+.healthContainer {
     width: 350px;
     height: 150px;
     margin-left: 3.5%;
@@ -119,23 +114,64 @@ footer {
     background-color: #4f518c;
 }
 
+
+
+/* sign-in and log-in container////////////////////////////////// */
+
+/* form welcome */
+h5 {
+    color: white;
+    text-align: center;
+    /* margin: 30%; */
+    /* width: 80%; */
+    /* padding-top: 25px;
+    padding-bottom: 0px; */
+}
+
+.formPage{
+    display: flex;
+    justify-content: center;
+}
+
+.formContainer {
+    font-family: "Silkscreen", sans-serif;
+    width: 70%;
+    background-color: #4f518c;
+    margin: 10%;
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+.input-field {
+    background-color: white;
+    border-radius: 10px;
+    color: #2C2A4A;
+}
+
+.btn {
+    background-color: #2C2A4A;
+    font-family: "Silkscreen", sans-serif;
+}
+
+
 /* specify green color - used on buttons */
-#greenColor{
+#greenColor {
     background-color: #6cbf46;
 }
 
 /* specify green color - used on buttons */
-#blueColor{
+#blueColor {
     background-color: #7fdeff;
 }
 
 /* specify green color - used on buttons */
-#medPurpleColor{
+#medPurpleColor {
     background-color: #4f518c;
 }
 
 /* specify green color - used on buttons */
-#orangeColor{
+#orangeColor {
     background-color: #faba6d;
 }
 
@@ -148,524 +184,21 @@ footer {
 
 
 
-@media screen and (max-width: 1920px) {
 
-    /* form welcome */
-    h5 {
-        color: white;
-        margin-left: 42%;
-        width: 80px;
-        padding-top: 25px;
-        padding-bottom: 0px;
-    }
 
-    /* Navbar */
-    .row {
-        margin-top: 40px;
-        width: 700px;
-
-    }
-
-    /* Navbar */
-    .right {
-        font-family: "Red Hat Mono", monospace;
-        font-optical-sizing: auto;
-        font-style: normal;
-        padding-right: 2%;
-
-    }
-
-    /* sign-in and log-in container */
-    .formContainer {
-        font-family: "Silkscreen", sans-serif;
-        margin-top: 40px;
-        width: 800px;
-        background-color: #4f518c;
-        margin-left: 31%;
-        border-radius: 10px;
-    }
-
-    .input-field {
-        background-color: white;
-        border-radius: 10px;
-        color: #2C2A4A;
-        height: 45px;
-    }
-
-    .btn {
-        background-color: #2C2A4A;
-        font-family: "Silkscreen", sans-serif;
-        margin-left: 44%;
-
-    }
-
-}
-
-
-
-@media screen and (max-width: 1728px) {
-
-    /* form welcome */
-    h5 {
-        color: white;
-        margin-left: 43%;
-        width: 80px;
-        padding-top: 25px;
-        padding-bottom: 0px;
-    }
-
-    /* Navbar */
-    .row {
-        margin-top: 40px;
-        width: 700px;
-    }
-
-    /* sign-in and log-in container */
-    .formContainer {
-        font-family: "Silkscreen", sans-serif;
-        margin-top: 40px;
-        width: 800px;
-        background-color: #4f518c;
-        margin-left: 28%;
-        border-radius: 10px;
-    }
-
-    .input-field {
-        background-color: white;
-        border-radius: 10px;
-        color: #2C2A4A;
-        height: 45px;
-    }
-
-    .btn {
-        background-color: #2C2A4A;
-        font-family: "Silkscreen", sans-serif;
-        margin-left: 45%;
-
-    }
-
-}
-
-@media screen and (max-width: 1512px) {
-
-    /* form welcome */
-    h5 {
-        color: white;
-        margin-left: 40%;
-        width: 80px;
-        padding-top: 25px;
-        padding-bottom: 0px;
-    }
-
-    /* Navbar */
-    .row {
-        margin-top: 40px;
-        width: 550px;
-    }
-
-    /* sign-in and log-in container */
-    .formContainer {
-        font-family: "Silkscreen", sans-serif;
-        margin-top: 40px;
-        width: 700px;
-        background-color: #4f518c;
-        margin-left: 28%;
-        border-radius: 10px;
-    }
-
-    .input-field {
-        background-color: white;
-        border-radius: 10px;
-        color: #2C2A4A;
-        height: 45px;
-    }
-
-    .btn {
-        background-color: #2C2A4A;
-        font-family: "Silkscreen", sans-serif;
-        margin-left: 41%;
-
-    }
-
-}
-
-@media screen and (max-width: 1440px) {
-
-    /* form welcome */
-    h5 {
-        color: white;
-        margin-left: 40%;
-        width: 80px;
-        padding-top: 25px;
-        padding-bottom: 0px;
-    }
-
-    /* Navbar */
-    .row {
-        margin-top: 30px;
-        width: 550px;
-    }
-
-    /* sign-in and log-in container */
-    .formContainer {
-        font-family: "Silkscreen", sans-serif;
-        margin-top: 40px;
-        width: 700px;
-        background-color: #4f518c;
-        margin-left: 28%;
-        border-radius: 10px;
-    }
-
-    .input-field {
-        background-color: white;
-        border-radius: 10px;
-        color: #2C2A4A;
-        height: 45px;
-    }
-
-    .btn {
-        background-color: #2C2A4A;
-        font-family: "Silkscreen", sans-serif;
-        margin-left: 41%;
-
-    }
-
-}
-
-@media screen and (max-width: 1280px) {
-
-    /* form welcome */
-    h5 {
-        color: white;
-        margin-left: 40%;
-        width: 80px;
-        padding-top: 25px;
-        padding-bottom: 0px;
-    }
-
-    /* right side navbar */
-    .right {
-        font-family: "Red Hat Mono", monospace;
-        font-optical-sizing: auto;
-        font-style: normal;
-        padding-right: 5%;
-
-    }
-
-
-    /* Navbar */
-    .row {
-        margin-top: 30px;
-        width: 550px;
-    }
-
-    /* sign-in and log-in container */
-    .formContainer {
-        font-family: "Silkscreen", sans-serif;
-        margin-top: 40px;
-        width: 700px;
-        background-color: #4f518c;
-        margin-left: 24%;
-        border-radius: 10px;
-    }
-
-    .input-field {
-        background-color: white;
-        border-radius: 10px;
-        color: #2C2A4A;
-        height: 45px;
-    }
-
-    .btn {
-        background-color: #2C2A4A;
-        font-family: "Silkscreen", sans-serif;
-        margin-left: 41%;
-
-    }
-
-}
-
-@media screen and (max-width: 1024px) {
-
-    /* form welcome */
-    h5 {
-        color: white;
-        margin-left: 40%;
-        width: 80px;
-        padding-top: 25px;
-        padding-bottom: 0px;
-    }
-
-    /* right side navbar */
-    .right {
-        font-family: "Red Hat Mono", monospace;
-        font-optical-sizing: auto;
-        font-style: normal;
-        padding-right: 5%;
-
-    }
-
-    /* Navbar */
-    .row {
-        margin-top: 30px;
-        width: 550px;
-    }
-
-    /* sign-in and log-in container */
-    .formContainer {
-        font-family: "Silkscreen", sans-serif;
-        margin-top: 40px;
-        width: 700px;
-        background-color: #4f518c;
-        margin-left: 15%;
-        border-radius: 10px;
-    }
-
-    .input-field {
-        background-color: white;
-        border-radius: 10px;
-        color: #2C2A4A;
-        height: 45px;
-    }
-
-    .btn {
-        background-color: #2C2A4A;
-        font-family: "Silkscreen", sans-serif;
-        margin-left: 41%;
-
-    }
-
-}
-
-@media screen and (max-width: 834px) {
-
-    /* Navbar */
-    .right {
-        font-family: "Red Hat Mono", monospace;
-        font-optical-sizing: auto;
-        font-style: normal;
-        padding-right: 2%;
-
-    }
-
-    /* form welcome */
-    h5 {
-        color: white;
-        margin-left: 39%;
-        width: 80px;
-        padding-top: 25px;
-        padding-bottom: 0px;
-    }
-
-    /* Navbar also effects input width */
-    .row {
-        margin-top: 30px;
-        width: 450px;
-    }
-
-    /* sign-in and log-in container */
-    .formContainer {
-        font-family: "Silkscreen", sans-serif;
-        margin-top: 40px;
-        width: 500px;
-        background-color: #4f518c;
-        margin-left: 18%;
-        border-radius: 10px;
-    }
-
-    .input-field {
-        background-color: white;
-        border-radius: 10px;
-        color: #2C2A4A;
-        height: 45px;
-    }
-
-    .btn {
-        background-color: #2C2A4A;
-        font-family: "Silkscreen", sans-serif;
-        margin-left: 40%;
-
-    }
-
-}
-
-@media screen and (max-width: 744px) {
-
-    /* form welcome */
-    h5 {
-        color: white;
-        margin-left: 39%;
-        width: 80px;
-        padding-top: 25px;
-        padding-bottom: 0px;
-    }
-
-    /* Navbar */
-    .row {
-        margin-top: 20px;
-        width: 400px;
-    }
-
-    /* sign-in and log-in container */
-    .formContainer {
-        font-family: "Silkscreen", sans-serif;
-        margin-top: 40px;
-        width: 500px;
-        background-color: #4f518c;
-        margin-left: 14%;
-        border-radius: 10px;
-    }
-
-    .input-field {
-        background-color: white;
-        border-radius: 10px;
-        color: #2C2A4A;
-        height: 45px;
-    }
-
-    .btn {
-        background-color: #2C2A4A;
-        font-family: "Silkscreen", sans-serif;
-        margin-left: 40%;
-
-    }
-
-}
-
-@media screen and (max-width: 430px) {
-
-    /* form welcome */
-    h5 {
-        color: white;
-        margin-left: 30%;
-        width: 80px;
-        padding-top: 25px;
-        padding-bottom: 0px;
-    }
-
-    /* input fields */
-    .row {
-        margin-top: 30px;
-        width: 275px;
-    }
-
-    /* sign-in and log-in container */
-    .formContainer {
-        font-family: "Silkscreen", sans-serif;
-        margin-top: 40px;
-        width: 300px;
-        background-color: #4f518c;
-        margin-left: 16%;
-        border-radius: 10px;
-    }
-
-    .input-field {
-        background-color: white;
-        border-radius: 10px;
-        /* color: #2C2A4A; */
-        height: 45px;
-        width: 150px;
-    }
-
-    .btn {
-        background-color: #2C2A4A;
-        font-family: "Silkscreen", sans-serif;
-        margin-left: 35%;
-    }
-
-
-}
-
-@media screen and (max-width: 390px) {
-
-    /* form welcome */
-    h5 {
-        color: white;
-        margin-left: 30%;
-        width: 80px;
-        padding-top: 25px;
-        padding-bottom: 0px;
-    }
-
-
-    /* Navbar */
-    .row {
-        /* margin-top: 20px; */
-        width: 200px;
-    }
-
-    /* sign-in and log-in container */
-
-    .formContainer {
-        font-family: "Silkscreen", sans-serif;
-        margin-top: 40px;
-        width: 275px;
-        background-color: #4f518c;
-        margin-left: 14%;
-        border-radius: 10px;
-    }
-
-    .input-field {
-        background-color: white;
-        border-radius: 10px;
-        color: #2C2A4A;
-        height: 45px;
-        /* width: 200px; */
-    }
-
-    .btn {
-        background-color: #2C2A4A;
-        font-family: "Silkscreen", sans-serif;
-        margin-left: 30%;
-
-    }
-
-}
 
 @media screen and (max-width: 360px) {
-
     /* form welcome */
     h5 {
         color: white;
-        margin-left: 30%;
-        width: 80px;
-        padding-top: 25px;
-        padding-bottom: 0px;
-    }
 
-
-    /* Navbar */
-    .row {
-        /* margin-top: 20px; */
-        width: 200px;
-    }
-
-    /* sign-in and log-in container */
-
-    .formContainer {
-        font-family: "Silkscreen", sans-serif;
-        margin-top: 40px;
-        width: 250px;
-        background-color: #4f518c;
-        margin-left: 7%;
-        border-radius: 10px;
-    }
-
-    .input-field {
-        background-color: white;
-        border-radius: 10px;
-        color: #2C2A4A;
-        height: 45px;
-        /* width: 200px; */
     }
 
     .btn {
         background-color: #2C2A4A;
         font-family: "Silkscreen", sans-serif;
-        margin-left: 31%;
-
-    }
 
 
+    } *
 
 }
