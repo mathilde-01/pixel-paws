@@ -3,11 +3,11 @@ const { HealthModel, PetModel, UserModel } = require("../models");
 const resolvers = {
   Query: {
     // finds all pets
-    pets: async () => {
+    allPets: async () => {
       return PetModel.find();
     },
     // find pet by id
-    pet: async (parent, id ) => {
+    petById: async (parent, id ) => {
       console.log(id);
       //return PetModel.findOne({ _id: id });
       return PetModel.findOne({ _id: id }).populate("user");

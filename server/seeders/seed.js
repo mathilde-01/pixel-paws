@@ -32,6 +32,22 @@ async function seedData() {
       }
     ]);
 
+    // Seed health
+    const health = await Health.create([
+      {
+        fun: 0.8,
+        cleanliness: 0.9,
+        hunger: 0.5,
+        sleep: 0.7,
+      },
+      {
+        fun: 0.7,
+        cleanliness: 0.8,
+        hunger: 0.6,
+        sleep: 0.5,
+      }
+    ]);
+    
     // Seed pets
     const pets = await Pet.create([
       {
@@ -41,7 +57,9 @@ async function seedData() {
         alive: true,
         birthday: new Date(),
         last_interaction: new Date(),
-        user_id: users[0]._id
+        user: users[0]._id,
+        health: health[0]._id
+
       },
       {
         name: 'Buddy',
@@ -50,27 +68,11 @@ async function seedData() {
         alive: true,
         birthday: new Date(),
         last_interaction: new Date(),
-        user_id: users[1]._id
+        user: users[1]._id,
+        health: health[0]._id
       }
     ]);
 
-    // Seed health
-    await Health.create([
-      {
-        fun: 0.8,
-        cleanliness: 0.9,
-        hunger: 0.5,
-        sleep: 0.7,
-        pet_id: pets[0]._id
-      },
-      {
-        fun: 0.7,
-        cleanliness: 0.8,
-        hunger: 0.6,
-        sleep: 0.5,
-        pet_id: pets[1]._id
-      }
-    ]);
 
     console.log('Seed data successfully.');
     process.exit(0); // Exit after seeding data
