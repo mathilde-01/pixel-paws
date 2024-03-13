@@ -55,20 +55,18 @@ async function seedData() {
     ]);
 
     // Seed health
-    await Health.create([
+    const health = await Health.create([
       {
         fun: 0.8,
         cleanliness: 0.9,
         hunger: 0.5,
         sleep: 0.7,
-        pet_id: pets[0]._id
       },
       {
         fun: 0.7,
         cleanliness: 0.8,
         hunger: 0.6,
         sleep: 0.5,
-        pet_id: pets[1]._id
       }
     ]);
 

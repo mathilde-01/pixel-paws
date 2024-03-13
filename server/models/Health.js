@@ -16,10 +16,6 @@ const healthSchema = new mongoose.Schema({
   sleep: {
     type: Number,
     required: true
-  },
-  pet_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Pet'
   }
 });
 

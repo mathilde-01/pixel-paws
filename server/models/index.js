@@ -5,19 +5,23 @@ const {mongoose, Schema} = require('mongoose');
 
 // Define associations using Mongoose schema references
 // Pet.schema.add({
-Pet.schema.add({
-  user_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  }
-});
+// Pet.schema.add({
+//   user_id: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: 'User'
+//   },
+//   health_id: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: 'Health'
+//   }
+// });
 
-Health.schema.add({
-  pet_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Pet'
-  }
-});
+// Health.schema.add({
+//   pet_id: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: 'Pet'
+//   }
+// });
 
 const UserModel = mongoose.model('User', User.schema);
 const PetModel = mongoose.model('Pet', Pet.schema);
