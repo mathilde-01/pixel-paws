@@ -13,6 +13,7 @@ const typeDefs = `
     birthday: String
     last_interaction: String
     user: User
+    health: Health
   }
 
   type Health {
@@ -21,7 +22,6 @@ const typeDefs = `
     cleanliness: Float
     hunger: Float
     sleep: Float
-    pet: Pet
   }
   
   type Query {

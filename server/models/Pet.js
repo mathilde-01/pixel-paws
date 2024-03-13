@@ -27,11 +27,11 @@ const petSchema = new mongoose.Schema({
     required: true,
     default: Date.now // Sets the default value to the current timestamp
   },
-  user_id: {
+  user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
-  health_id: {
+  health: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Health'
   }
