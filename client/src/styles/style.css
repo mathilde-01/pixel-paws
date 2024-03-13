@@ -18,6 +18,7 @@ footer {
     margin-top: 50px;
 }
 
+
 /* inside footer style */
 .container {
     background-color: #333457;
@@ -55,19 +56,8 @@ footer {
 
 }
 
-/* style for input */
-.input-field {
-    background-color: white;
-    border-radius: 10px;
-    color: #2C2A4A;
-    height: 45px;
-}
 
-.btn {
-    background-color: #2C2A4A;
-    font-family: "Silkscreen", sans-serif;
-
-}
+/* ///// Display Page ////////////////////////////////////// */
 
 .displayContainer{
     display: flex;
@@ -87,26 +77,34 @@ footer {
 
 /* stand for circle - design */
 .petStand {
-    position: absolute;
+    position: relative;
     margin-top: 0px;
     width: 30%;
     border: 3px solid #7fdeff;
     height: 30px;
+    left: 34%;
+    margin-bottom: 10px;
 }
 
 /* container holding buttons on display pages */
 .btnContainer {
-    width: 90%;
-    margin: 7%;
+    width: 100%;
+    height: 20px;
+    margin: 2%;
     font-family: "Silkscreen", sans-serif;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.btn-small{
+    margin: 5px;
 }
 
 /* container holding life/health levels */
 .healthContainer {
-    width: 90%;
+    width: 85%;
     height: 150px;
-    margin: 16px;
+    margin: 25px;
     border-radius: 7px;
     font-family: "Silkscreen", sans-serif;
     border: 1px solid transparent;
@@ -115,7 +113,7 @@ footer {
 
 
 
-/* sign-in and log-in container////////////////////////////////// */
+/* ////////  Sign-in & Log-in ////////////////////////////////// */
 
 /* form welcome */
 h5 {
@@ -144,13 +142,24 @@ h5 {
     color: #2C2A4A;
 }
 
+/* style for input */
+.input-field {
+    background-color: white;
+    border-radius: 10px;
+    color: #2C2A4A;
+    height: 45px;
+}
+
 .btn {
     background-color: #2C2A4A;
     font-family: "Silkscreen", sans-serif;
-}
+} 
 
 
+/* /////////////////////////  IDs /////////////////////////*/
 /* specify green color - used on buttons */
+
+
 #greenColor {
     background-color: #6cbf46;
 }
@@ -187,7 +196,7 @@ h5 {
     .btn {
         background-color: #2C2A4A;
         font-family: "Silkscreen", sans-serif;
-
+        
     } 
 
 }
