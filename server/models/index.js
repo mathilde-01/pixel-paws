@@ -15,6 +15,12 @@ const {mongoose, Schema} = require('mongoose');
 //     ref: 'Health'
 //   }
 // });
+// Pet.schema.add({
+//   user_id: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: 'User'
+//   }
+// });
 
 // Health.schema.add({
 //   pet_id: {

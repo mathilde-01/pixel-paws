@@ -32,28 +32,6 @@ async function seedData() {
       }
     ]);
 
-    // Seed pets
-    const pets = await Pet.create([
-      {
-        name: 'Fluffy',
-        type: 'Cat',
-        location: 'Living Room',
-        alive: true,
-        birthday: new Date(),
-        last_interaction: new Date(),
-        user_id: users[0]._id
-      },
-      {
-        name: 'Buddy',
-        type: 'Dog',
-        location: 'Backyard',
-        alive: true,
-        birthday: new Date(),
-        last_interaction: new Date(),
-        user_id: users[1]._id
-      }
-    ]);
-
     // Seed health
     const health = await Health.create([
       {
@@ -69,6 +47,32 @@ async function seedData() {
         sleep: 0.5,
       }
     ]);
+    
+    // Seed pets
+    const pets = await Pet.create([
+      {
+        name: 'Fluffy',
+        type: 'Cat',
+        location: 'Living Room',
+        alive: true,
+        birthday: new Date(),
+        last_interaction: new Date(),
+        user: users[0]._id,
+        health: health[0]._id
+
+      },
+      {
+        name: 'Buddy',
+        type: 'Dog',
+        location: 'Backyard',
+        alive: true,
+        birthday: new Date(),
+        last_interaction: new Date(),
+        user: users[1]._id,
+        health: health[0]._id
+      }
+    ]);
+
 
     console.log('Seed data successfully.');
     process.exit(0); // Exit after seeding data
