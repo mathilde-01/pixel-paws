@@ -1,21 +1,30 @@
 const { HealthModel, PetModel, UserModel } = require("../models");
+const updateHealthData = require("../utils/updateHealth");
 
 const resolvers = {
   Query: {
     // finds all pets
     allPets: async () => {
-      return PetModel.find();
+      const pets = await PetModel.find().populate("health");
+      // for (pet_id in pets) {
+      //   pet = pets[pet_id];
+      //   if (pet && pet.health) {
+      //     updateHealthData(pet_id,pet)
+      //   }
+      // }
+      return pets
     },
     // find pet by id
     petById: async (parent, id ) => {
-      console.log(id);
-      return PetModel.findOne({ _id: id }).populate("health").populate("user");
-      //return PetModel.findOne({ _id: id }).populate("health");
+      const pet = await PetModel.findOne({ _id: id }).populate("health").populate("user");
+      if (pet && pet.health) {
+        updateHealthData(id, pet)
+      }
+      return pet
     },
     // finds user
     user: async (parent, id ) => {
       return UserModel.findOne({ _id: id })
-      //return UserModel.findOne({ _id: id }).populate("pets");
     },
     health: async (parent, {}) => {
       return HealthModel.find();
