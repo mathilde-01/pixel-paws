@@ -66,14 +66,19 @@ footer {
 .btn {
     background-color: #2C2A4A;
     font-family: "Silkscreen", sans-serif;
-    /* margin-left: 31%; */
 
+}
+
+.displayContainer{
+    display: flex;
+    flex-direction: column;
 }
 
 /* where pet lives in circle on display page */
 .petCircle {
-    margin-left: 17%;
-    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 15%;
     width: 250px;
     border: 5px solid #7fdeff;
     height: 250px;
@@ -82,34 +87,28 @@ footer {
 
 /* stand for circle - design */
 .petStand {
+    position: absolute;
     margin-top: 0px;
-    bottom: 0;
-    width: 100px;
+    width: 30%;
     border: 3px solid #7fdeff;
-    margin-left: 37%;
     height: 30px;
-
-
 }
 
 /* container holding buttons on display pages */
 .btnContainer {
-    width: 400px;
-    margin-left: 7%;
-    margin-top: 20px;
+    width: 90%;
+    margin: 7%;
     font-family: "Silkscreen", sans-serif;
     justify-content: space-between;
 }
 
 /* container holding life/health levels */
 .healthContainer {
-    width: 350px;
+    width: 90%;
     height: 150px;
-    margin-left: 3.5%;
-    margin-top: 15px;
+    margin: 16px;
     border-radius: 7px;
     font-family: "Silkscreen", sans-serif;
-    justify-content: space-between;
     border: 1px solid transparent;
     background-color: #4f518c;
 }
@@ -122,10 +121,6 @@ footer {
 h5 {
     color: white;
     text-align: center;
-    /* margin: 30%; */
-    /* width: 80%; */
-    /* padding-top: 25px;
-    padding-bottom: 0px; */
 }
 
 .formPage{
@@ -182,11 +177,6 @@ h5 {
 }
 
 
-
-
-
-
-
 @media screen and (max-width: 360px) {
     /* form welcome */
     h5 {
@@ -198,7 +188,6 @@ h5 {
         background-color: #2C2A4A;
         font-family: "Silkscreen", sans-serif;
 
-
-    } *
+    } 
 
 }

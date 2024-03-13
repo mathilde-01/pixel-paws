@@ -1,7 +1,7 @@
 export default function Display() {
 
     return (
-        <>
+        <>  <div className="displayContainer">
             <div className="petCircle"></div>
             <div className="petStand"></div>
             <div className="btnContainer">
@@ -11,6 +11,7 @@ export default function Display() {
                 <a className="waves-effect waves-light btn-small" id="orangeColor">Feed</a>
             </div>
             <div className="healthContainer"></div>
+            </div>
         </>
     )
 
