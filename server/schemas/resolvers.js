@@ -1,5 +1,5 @@
 const { HealthModel, PetModel, UserModel } = require("../models");
-const updateHealthData = require("../utils/updateHealth");
+const updateHealthData = require("../util/heathLogic");
 
 const resolvers = {
   Query: {
