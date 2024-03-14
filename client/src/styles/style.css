@@ -66,12 +66,23 @@ footer {
     margin: 20px;
 }
 
+.petContainer{
+    display: relative;
+    width: 100%;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+
 /* where pet lives in circle on display page */
 .petCircle {
     /* margin: 10px, 10px, 10px, 0px; */
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
+    position: relative;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
     width: 250px;
     border: 5px solid #7fdeff;
     height: 250px;
@@ -82,20 +93,18 @@ footer {
 .petStand {
     position: relative;
     margin-top: 0px;
-    margin-left: 35%;
-    margin-right: 35%;
+    margin-left: 32%;
+    margin-right: 32%;
     width: 90px;
     border: 3px solid #7fdeff;
     height: 30px;
-    margin-bottom: 10px;
 }
 
 /* container holding buttons on display pages */
 .btnContainer {
     width: 100%;
     height: 25px;
-    /* padding: 1%; */
-    /* margin: 2%; */
+    margin: 1px;
     font-family: "Silkscreen", sans-serif;
     justify-content: space-evenly;
     margin-bottom: 10px;
@@ -107,11 +116,15 @@ footer {
     padding: 2px;
 }   
 
+.mainHealthContainer{
+
+}
+
 /* container holding life/health levels */
 .healthContainer {
-    width: 85%;
+    width: 90%;
     height: 150px;
-    margin: 25px;
+    margin: 15px;
     border-radius: 7px;
     font-family: "Silkscreen", sans-serif;
     border: 1px solid transparent;
