@@ -2,8 +2,10 @@ export default function Display() {
 
     return (
         <>  <div className="displayContainer">
-            <div className="petCircle"></div>
+            <div className="petContainer ">
+            <div className="petCircle "></div>
             <div className="petStand"></div>
+            </div>
             <div className="btnContainer">
                 <a className="waves-effect waves-light btn-small" id="greenColor">Play</a>
            
