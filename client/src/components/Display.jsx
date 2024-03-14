@@ -1,9 +1,13 @@
+import ThreeScene from './ThreeScene';
+
 export default function Display() {
 
     return (
         <>  <div className="displayContainer">
             <div className="petContainer ">
-            <div className="petCircle "></div>
+            <div className="petCircle ">
+                <ThreeScene/>
+            </div>
             <div className="petStand"></div>
             </div>
             <div className="btnContainer">
