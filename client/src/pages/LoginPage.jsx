@@ -1,9 +1,9 @@
-import Login from "../components/LoginForm/index.jsx";
+import Login from "../components/Login/index.jsx";
 
 export default function LoginPage(){
     return(
-        <div>
+      
             <Login/>
-        </div>
+      
     )
 }

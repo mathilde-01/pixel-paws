@@ -1,12 +1,13 @@
-import '../../styles/style.css';
+
 
 function LoginForm({ submitHandler, changeHandler, emailState, passwordState }) {
   return (
-    <form onSubmit={submitHandler}>
+    
+   
       <div className="formContainer">
         <h5>WELCOME BACK!</h5>
-        <div className="row">
-          <form>
+        {/* <div className="row"> */}
+          <form onSubmit={submitHandler}>
             <div className="row">
               <div className="input-field col s6">
                 <input id="Email" type="text" className="validate" name="email" value={emailState}
@@ -26,8 +27,7 @@ function LoginForm({ submitHandler, changeHandler, emailState, passwordState }) 
             </button>
           </form>
         </div>
-      </div>
-    </form>
+ 
       // {/*       
       // <form className="login" onSubmit={submitHandler}>
       //   <div className="input-group flex-nowrap">  */}
