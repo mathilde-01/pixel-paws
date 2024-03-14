@@ -10,6 +10,7 @@ const updateHealthData = async (petId, data) => {
   data.health.cleanliness -= barDrain;
   data.health.hunger -= barDrain;
   data.health.sleep -= barDrain;
+  data.last_interaction = currentTime;
 
 //   const updatedPet = await Pet.findByIdAndUpdate(petId, { $set: newData });
 //   return updatedPet;

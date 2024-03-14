@@ -33,12 +33,12 @@ const resolvers = {
 
   Mutation: {
     // add user
-    addUser: async (parent, { name, email }) => {
+    addUser: async (parent, { email }) => {
       const existingUser = await UserModel.findOne({ email });
       if (existingUser) {
         throw new Error('User with this email already exists');
       }
-      return UserModel.create({ name, email });
+      return UserModel.create({ email });
     },
     // add pet
     addPet: async (parent, { petInput }) => {
