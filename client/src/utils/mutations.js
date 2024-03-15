@@ -24,6 +24,18 @@ export const UPDATE_HEALTH_MUTATION = gql`
   }
 `;
 
+export const ADD_PET = gql`
+  mutation Mutation($name: String!, $location: String!, $userId: ID!) {
+    addPet(name: $name, location: $location, userId: $userId) {
+      name
+      location
+      user {
+        _id
+      }
+    }
+  }
+`;
+
 export const UPDATE_PET_MUTATION = gql`
   mutation UpdatePetOnLoad($petId: ID!) {
     updatePetOnLoad(petId: $petId) {
@@ -32,11 +44,10 @@ export const UPDATE_PET_MUTATION = gql`
   }
 `;
 
-export const DELETE_PET_MUTATION = gql`
-  mutation DeletePet($petId: ID!) {
+export const REMOVE_PET_MUTATION = gql`
+  mutation RemovePet($petId: ID!) {
     removePet(petId: $petId) {
       _id
-      
     }
   }
 `;

@@ -60,6 +60,7 @@ footer {
 .displayContainer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 90%;
     margin: 20px;
 }
@@ -110,7 +111,7 @@ canvas {
 .btnContainer {
     flex-basis: 42%;
     height: 25px;
-    margin: 1px;
+    margin: 15px;
     font-family: "Silkscreen", sans-serif;
     justify-content: space-evenly;
     margin-bottom: 10px;
@@ -130,14 +131,36 @@ canvas {
 /* container holding life/health levels */
 .healthContainer {
     width: 90%;
-    height: 150px;
-    margin: 15px;
+    padding: 20px;
     border-radius: 7px;
+    margin: 0 auto;
+    margin-top: 10px;
     font-family: "Silkscreen", sans-serif;
     border: 1px solid transparent;
     background-color: #4f518c;
 }
 
+.nameContainer {
+    background-color: #4f518c;
+    border-radius: 7px;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 90%;
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+
+#name {
+    font-family: "Silkscreen", sans-serif;
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+#description {
+    margin: 0;
+}
 
 
 /* ////////  Sign-in & Log-in ////////////////////////////////// */
