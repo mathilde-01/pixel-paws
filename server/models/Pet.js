@@ -7,7 +7,8 @@ const petSchema = new mongoose.Schema({
   },
   type: {
     type: String,
-    required: true
+    required: true,
+    default: "Dragon"
   },
   location: {
     type: String,
@@ -15,7 +16,8 @@ const petSchema = new mongoose.Schema({
   },
   alive: {
     type: Boolean,
-    required: true
+    required: true,
+    default: true
   },
   birthday: {
     type: Date,

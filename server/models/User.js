@@ -17,7 +17,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 8 // Set minimum length validator
-  }
+  },
+  pets: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Pet' // Make sure this matches the name of your Pet model
+  }]
 });
 
 // Hash password before saving
