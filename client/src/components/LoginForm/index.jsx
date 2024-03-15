@@ -5,7 +5,7 @@ function LoginForm({ submitHandler, changeHandler, emailState, passwordState }) 
         {/* <div className="row"> */}
           <form onSubmit={submitHandler}>
             <div className="row">
-              <div className="input-field col s6">
+              <div className="input-field col s12">
                 <input id="Email" type="text" className="validate" name="email" value={emailState}
                   onChange={changeHandler}></input>
                 <label htmlFor="Email">Email</label>
@@ -23,36 +23,6 @@ function LoginForm({ submitHandler, changeHandler, emailState, passwordState }) 
             </button>
           </form>
         </div>
- 
-      // {/*       
-      // <form className="login" onSubmit={submitHandler}>
-      //   <div className="input-group flex-nowrap">  */}
-  // {/* <span className="input-group-text" id="addon-wrapping">email</span> */ }
-  // {/* <input 
-  //           type="text" 
-  //           className="form-control" 
-  //           placeholder="Email" 
-  //           aria-label="Email" 
-  //           name="email" 
-  //           value={emailState}
-  //           onChange={changeHandler}
-  //           aria-describedby="addon-wrapping" /> */}
-  // {/* </div> */ }
-  // {/* <div className="input-group flex-nowrap">
-  //       <span className="input-group-text" id="addon-wrapping">password</span>
-  //       <input
-  //         type="password"
-  //         className="form-control"
-  //         placeholder="Password"
-  //         aria-label="Password"
-  //         name="password"
-  //         value={passwordState}
-  //         onChange={changeHandler}
-  //         aria-describedby="addon-wrapping" /> */}
-  // {/* </div>
-  //       <button type="submit" className="btn btn-primary">Login</button> */}
-  // {/* </form> */ }
-  // {/* // </> */ }
   )
 }
 

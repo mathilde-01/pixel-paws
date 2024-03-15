@@ -11,7 +11,7 @@ export default function NavBar() {
     return (
         <nav>
             <div className="nav-wrapper">
-                <a href="/" className="brand-logo">Pixel Paws</a>
+                <a href="/" className="brand-logo">Pixel Pals</a>
                 <a href="#" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                 <ul className="right hide-on-med-and-down" id="navRight">
                     {['display', 'login', 'signup'].map((link, index) => (

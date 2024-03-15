@@ -10,7 +10,7 @@ export default function SignUpForm({
             <div className="row center">
                 <form onSubmit={submitHandler}>    
                     <div className="row">
-                        <div className="input-field col s6">
+                        <div className="input-field col s12">
                             <input name= "email" id="Email" type="text" className="validate" onChange={changeHandler} value={emailState}></input>
                             <label htmlFor="Email">Email</label>
                         </div>

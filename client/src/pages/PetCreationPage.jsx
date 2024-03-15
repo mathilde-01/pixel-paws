@@ -1,11 +1,12 @@
-import Navbar from "../components/Navbar";
-import ChoosePetForm from "../components/ChoosePetForm";
-import Footer from "../components/Footer";
+import ChoosePet from "../components/ChoosePet/ChoosePet";
+
 
 export default function PetCreationPage(){
+
     return(
-     
-            <ChoosePetForm/>
+        <div>
+            <ChoosePet/>
+        </div>
       
     )
 }
