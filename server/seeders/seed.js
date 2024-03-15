@@ -5,7 +5,7 @@ const Pet = require('../models/Pet');
 const Health = require('../models/Health');
 
 // Connect to MongoDB
-mongoose.connect('process.env.MONGODB_URI || mongodb://localhost:27017/pixel-paws', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/pixel-paws', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
     // Seed data
