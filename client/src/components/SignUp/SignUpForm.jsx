@@ -1,26 +1,28 @@
 import '../../styles/style.css'
 
-export default function SignUpForm({ }) {
+export default function SignUpForm({ 
+    submitHandler, changeHandler, emailState, passwordState, confirmPasswordState
+}) {
     return (
 
         <div className="formContainer">
             <h5>WELCOME!</h5>
             <div className="row center">
-                <form>
+                <form onSubmit={submitHandler}>    
                     <div className="row">
                         <div className="input-field col s6">
-                            <input id="Email" type="text" className="validate"></input>
+                            <input name= "email" id="Email" type="text" className="validate" onChange={changeHandler} value={emailState}></input>
                             <label htmlFor="Email">Email</label>
                         </div>
                         <div>
                             <div className="input-field col s12">
-                                <input id="password" type="password" className="validate"></input>
+                                <input name="password" id="password" type="password" className="validate" value={passwordState} onChange={changeHandler}></input>
                                 <label htmlFor="password">Password</label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s12">
-                                <input id="confirm-password" type="password" className="validate"></input>
+                                <input name= "confirm-password" id="confirm-password" type="password" className="validate" value={confirmPasswordState} onChange={changeHandler}></input>
                                 <label htmlFor="confirm-password">Confirm Password</label>
                             </div>
                         </div>
