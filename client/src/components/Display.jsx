@@ -1,11 +1,15 @@
 import ThreeScene from './ThreeScene';
 import React, { useState } from 'react';
-// import { useQuery } from '@apollo/client';
+import decode from 'jwt-decode';
+import { useQuery } from '@apollo/client';
+import { USER_QUERY } from '../utils/queries'
 // import { useMutation } from '@apollo/client';
-// import { ME_QUERY } from '../utils/queries'
 // import { MUTATION } from '../utils/mutations';
 
 export default function Display() {
+    const token = localStorage.getItem('id_token');
+    const decoded = decode(token);
+    let pet = {name: 'name'};
 
     const [playAnimation, setPlayAnimation] = useState(false);
     // const [playMutation] = useMutation(YOUR_MUTATION);
@@ -81,6 +85,20 @@ export default function Display() {
         }, 800);
     };
 
+    const { loading, data } = useQuery(USER_QUERY, {
+        variables: { id: decoded.data._id}
+    });
+
+    if (loading) {
+        return <div>Loading...</div>; // Render loading indicator while data is being fetched
+    }
+
+    const user = data?.user || {};
+    if (user) {
+        const petArray = user.pets;
+        pet = petArray[petArray.length - 1];
+    }
+
     return (
         <div className="displayContainer">
             <div className="petContainer">
@@ -99,7 +117,7 @@ export default function Display() {
                 <a className="waves-effect waves-light btn-small" id="orangeColor" onClick={handleFeedButtonClick}>Feed</a>
             </div>
             <div className="nameContainer">
-                <h3 id="name">name</h3>
+                <h3 id="name">{pet.name}</h3>
                 <p id="description">description</p>
             </div>
             {/* <div className='mainHealthContainer'> */}

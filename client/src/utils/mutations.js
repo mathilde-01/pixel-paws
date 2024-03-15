@@ -25,7 +25,7 @@ export const UPDATE_HEALTH_MUTATION = gql`
 `;
 
 export const ADD_PET = gql`
-  mutation Mutation($name: String!, $location: String!, $userId: ID!) {
+  mutation AddPet($name: String!, $location: String!, $userId: ID!) {
     addPet(name: $name, location: $location, userId: $userId) {
       name
       location

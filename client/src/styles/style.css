@@ -90,6 +90,10 @@ footer {
     justify-content: center;
     max-width: 700px;
     max-height: 700px;
+    background-image: url(./backgrounds/forest.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 canvas {
@@ -203,6 +207,13 @@ h5 {
 .btn {
     background-color: #2C2A4A;
     font-family: "Silkscreen", sans-serif;
+}
+
+/* Pet Creation */
+.select-dropdown {
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 14px !important;
+    color: #9e9e9e;
 }
 
 
