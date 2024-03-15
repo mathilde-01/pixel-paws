@@ -53,10 +53,12 @@ export const REMOVE_PET_MUTATION = gql`
 `;
 
 export const SIGNUP_MUTATION = gql`
-  mutation SignUp($name: String!, $email: String!) {
-    signUp(name: $name, email: $email) {
-      _id
-      email
+  mutation SignUp($email: String!, $password: String!, $confirmPassword: String!) {
+    addUser(email: $email, password: $password, confirmPassword: $confirmPassword) {
+      token
+      user {
+        email
+      }
     }
   }
 `;

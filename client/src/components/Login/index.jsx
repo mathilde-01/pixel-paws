@@ -17,6 +17,7 @@ function Login() {
     console.log(formState);
 
     try{
+      console.log("working")
       // send login data to backend
       const { data } = await login({
         variables: { ...formState }

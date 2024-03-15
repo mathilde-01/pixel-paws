@@ -22,7 +22,7 @@ export default function SignUpForm({
                         </div>
                         <div className="row">
                             <div className="input-field col s12">
-                                <input name= "confirm-password" id="confirm-password" type="password" className="validate" value={confirmPasswordState} onChange={changeHandler}></input>
+                                <input name= "confirmPassword" id="confirm-password" type="password" className="validate" value={confirmPasswordState} onChange={changeHandler}></input>
                                 <label htmlFor="confirm-password">Confirm Password</label>
                             </div>
                         </div>

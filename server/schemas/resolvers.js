@@ -1,5 +1,6 @@
 const { HealthModel, PetModel, UserModel } = require("../models");
 const updateHealthData = require("../util/heathLogic");
+const { signToken, AuthenticationError } = require('../util/auth');
 
 const resolvers = {
   Query: {
@@ -38,14 +39,33 @@ const resolvers = {
 
   Mutation: {
     //need login and signup resolvers
+    login: async (parent, { email, password }) => {
+      const user = await UserModel.findOne({ email });
 
+      if (!user) {
+        console.log("could not find user")
+        throw AuthenticationError;
+      }
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        console.log("incorrect password")
+        throw AuthenticationError;
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
+    },
     // need to complete add user
-    addUser: async (parent, { email }) => {
+    addUser: async (parent, { email, password }) => {
       const existingUser = await UserModel.findOne({ email });
       if (existingUser) {
         throw new Error('User with this email already exists');
       }
-      return UserModel.create({ email });
+      const user = await UserModel.create({ email, password });
+      const token = signToken(user);
+      return { token, user };
     },
     // add pet
     addPet: async (parent, { name, location, userId }) => {

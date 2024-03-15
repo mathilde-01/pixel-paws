@@ -38,8 +38,9 @@ userSchema.pre('save', async function (next) {
 });
 
 // Method to check password
-userSchema.methods.checkPassword = async function (loginPw) {
-  return await bcrypt.compare(loginPw, this.password);
+userSchema.methods.isCorrectPassword = async function (password) {
+  console.log("checking password")
+  return bcrypt.compare(password, this.password);
 };
 
 const User = mongoose.model('User', userSchema);

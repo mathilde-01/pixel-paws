@@ -5,7 +5,7 @@ import auth from "../../utils/auth";
 import { SIGNUP_MUTATION } from "../../utils/mutations";
 
 export default function SignUp(){
-    const [formState, setFormState] = useState({ email: '', password: '', "confirm-password": ''});
+    const [formState, setFormState] = useState({ email: '', password: '', confirmPassword: ''});
     const [signup, { error, data }] = useMutation(SIGNUP_MUTATION);
     const submitHandler = async (event) => {
         event.preventDefault();
@@ -17,13 +17,13 @@ export default function SignUp(){
             variables: { 
                 email: formState.email,
                 password: formState.password,
-                confirmPassword: formState["confirm-password"]
+                confirmPassword: formState.confirmPassword
             }
           })
-    
+
           console.log(data);
     
-          const token = data?.signUp.token || '';
+          const token = data?.addUser.token || '';
     
           // save token data on frontend
           auth.login(token);
@@ -32,7 +32,7 @@ export default function SignUp(){
           setFormState({
             email: '',
             password: '',
-            "confirm-password": ''
+            confirmPassword: '',
           })
         }
         catch (err){
@@ -56,7 +56,7 @@ export default function SignUp(){
                changeHandler={changeHandler}
                emailState={formState.email}
                passwordState={formState.password}
-               confirmPasswordState={formState["confirm-password"]}
+               confirmPasswordState={formState.confirmPassword}
             />
         </div>
     )
