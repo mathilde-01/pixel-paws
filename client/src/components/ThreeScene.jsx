@@ -1,13 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-const ThreeScene = () => {
+const ThreeScene = ({ playAnimation, feedAnimation, sleepAnimation, cleanAnimation }) => {
   const canvasRef = useRef();
+  let idleAction, rollAction, feedAction, sleepAction, cleanAction;
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, canvas, alpha: true });
 
     const fov = 30;
     const aspect = 2;
@@ -18,18 +19,6 @@ const ThreeScene = () => {
     camera.lookAt(new THREE.Vector3(0, 5, 0));
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color('black');
-
-    const loader = new THREE.CubeTextureLoader();
-    const texture = loader.load([
-      '/posx.png',
-      '/negx.png',
-      '/posy.png',
-      '/negy.png',
-      '/posz.png',
-      '/negz.png',
-    ]);
-    scene.background = texture;
 
     const skyColor = 0xB1E1FF; // light blue
     const groundColor = 0xB97A20; // brownish orange
@@ -73,7 +62,6 @@ const ThreeScene = () => {
     const gltfLoader = new GLTFLoader();
     gltfLoader.load('./animals/dragon.glb', (gltf) => {
       const root = gltf.scene;
-      console.log(dumpObject(root).join('\n'));
       dragon = root.getObjectByName('Rig');
 
       dragon.position.set(0, 0, 0);
@@ -81,22 +69,34 @@ const ThreeScene = () => {
       scene.add(dragon);
 
       mesh = dragon.getObjectByName('Dragon_LOD3');
-      console.log(mesh);
       mesh.morphTargetDictionary = mesh.userData.targetNames;
       console.log(mesh.morphTargetDictionary);
     });
 
     const mixers = [];
+    let currentAction = idleAction;
 
     gltfLoader.load('./animals/animations/dragon_animations.glb', (gltf) => {
       const mixer = new THREE.AnimationMixer(dragon);
       const clips = gltf.animations;
 
-      const clip = THREE.AnimationClip.findByName(clips, 'Idle_A');
-      const action = mixer.clipAction(clip);
-      action.play();
+      const idleClip = THREE.AnimationClip.findByName(clips, 'Idle_A');
+      const rollClip = THREE.AnimationClip.findByName(clips, 'Roll');
+      const feedClip = THREE.AnimationClip.findByName(clips, 'Eat');
+      const sleepClip = THREE.AnimationClip.findByName(clips, 'Death');
+      const cleanClip = THREE.AnimationClip.findByName(clips, 'Swim');
+
+      idleAction = mixer.clipAction(idleClip);
+      rollAction = mixer.clipAction(rollClip);
+      feedAction = mixer.clipAction(feedClip);
+      sleepAction = mixer.clipAction(sleepClip);
+      cleanAction = mixer.clipAction(cleanClip);
+
+      currentAction = idleAction; // Ensure currentAction is always initialized
+      currentAction.play();
 
       mixers.push(mixer);
+
     });
 
     const resizeRendererToDisplaySize = (renderer) => {
@@ -123,6 +123,28 @@ const ThreeScene = () => {
         camera.updateProjectionMatrix();
       }
 
+      if (playAnimation && currentAction !== rollAction) {
+        currentAction.stop();
+        rollAction.play();
+        currentAction = rollAction;
+      } else if (feedAnimation && currentAction !== feedAction) {
+        currentAction.stop();
+        feedAction.play()
+        currentAction = feedAction;
+      } else if (sleepAnimation && currentAction !== sleepAction) {
+        currentAction.stop();
+        sleepAction.play()
+        currentAction = sleepAction;
+      } else if (cleanAnimation && currentAction !== cleanAction) {
+        currentAction.stop();
+        cleanAction.play()
+        currentAction = cleanAction;
+      } else if (!playAnimation && !feedAnimation && !sleepAnimation && !cleanAnimation && currentAction !== idleAction) {
+        currentAction.stop();
+        idleAction.play();
+        currentAction = idleAction;
+      }
+
       for (const mixer of mixers) {
         mixer.update(deltaTime);
       }
@@ -137,9 +159,8 @@ const ThreeScene = () => {
     // Cleanup
     return () => {
       renderer.dispose();
-      scene.dispose();
     };
-  }, []);
+  }, [playAnimation, feedAnimation, sleepAnimation, cleanAnimation]);
 
   return <canvas ref={canvasRef} id="c" />;
 };
