@@ -5,7 +5,7 @@ const resolvers = {
   Query: {
     // finds all pets
     allPets: async () => {
-      const pets = await PetModel.find().populate("health");
+      const pets = await PetModel.find().populate("health").populate("user");
       // for (pet_id in pets) {
       //   pet = pets[pet_id];
       //   if (pet && pet.health) {
@@ -24,10 +24,15 @@ const resolvers = {
     },
     // finds user
     user: async (parent, id ) => {
-      return UserModel.findOne({ _id: id })
+      const user = await UserModel.findOne({ _id: id }).populate({ path: 'pets', populate: { path: 'health', model: 'Health' } })
+      return user
     },
     health: async (parent, {}) => {
       return HealthModel.find();
+    },
+    users: async () => {
+      const users = await UserModel.find().populate({ path: 'pets', populate: { path: 'health', model: 'Health' } });
+      return users;
     }
   },
 
@@ -43,17 +48,36 @@ const resolvers = {
       return UserModel.create({ email });
     },
     // add pet
-    addPet: async (parent, { petInput }) => {
+    addPet: async (parent, { name, location, userId }) => {
+
+        // Retrieve the user by the provided userId
+        const user = await UserModel.findById(userId);
+        if (!user) {
+          throw new Error('User not found');
+        }
+
         const pet = new PetModel({
-          name: petInput.name,
+          name,
+          location,
+          user: user
         });
+
+        const health = new HealthModel();
+        pet.health = health._id;
+
+        user.pets.push(pet._id);
+
+        await health.save();
+        await user.save();
         await pet.save();
+        
         return pet;
       },
 
     // remove pet
-    removePet: async (parent, { petId }) => { 
-      return PetModel.findOneAndDelete({ _id: petId });
+    removePet: async (parent, { petId }) => {
+      const deletedPet = await PetModel.findOneAndDelete({ _id: petId }); 
+      return deletedPet;
     },
 
     //update health

@@ -5,7 +5,7 @@ const Pet = require('../models/Pet');
 const Health = require('../models/Health');
 
 // Connect to MongoDB
-mongoose.connect('mongodb://0.0.0.0:27017/pixels-paws', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/pixel-paws', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
     // Seed data
@@ -71,6 +71,9 @@ async function seedData() {
       }
     ]);
 
+    // Update users with pets
+    await User.findByIdAndUpdate(users[0]._id, { $push: { pets: pets[0]._id } });
+    await User.findByIdAndUpdate(users[1]._id, { $push: { pets: pets[1]._id } });
 
     console.log('Seed data successfully.');
     process.exit(0); // Exit after seeding data

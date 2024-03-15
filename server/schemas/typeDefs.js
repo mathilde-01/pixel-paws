@@ -8,7 +8,9 @@ const typeDefs = `
   type Pet {
     _id: ID
     name: String
-    location: Int
+    type: String
+    location: String
+    alive: Boolean
     birthday: String
     last_interaction: String
     user: User
@@ -33,7 +35,7 @@ const typeDefs = `
   
   type Mutation {
     addUser(email: String!, password: String!, confirmPassword: String!): User
-    addPet(name: String!, location: Int, birthday: String, last_interaction: String): Pet
+    addPet(name: String!, location: String!, userId: ID!): Pet
     removePet(petId: ID!): Pet
     updateHealth(
       healthId: ID!
