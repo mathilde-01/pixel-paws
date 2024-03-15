@@ -28,7 +28,6 @@ export const UPDATE_PET_MUTATION = gql`
   mutation UpdatePetOnLoad($petId: ID!) {
     updatePetOnLoad(petId: $petId) {
       _id
-      // Include other fields you want to return after updating pet on load
     }
   }
 `;
@@ -37,7 +36,7 @@ export const DELETE_PET_MUTATION = gql`
   mutation DeletePet($petId: ID!) {
     removePet(petId: $petId) {
       _id
-      // Include other fields you want to return after deleting the pet
+      
     }
   }
 `;

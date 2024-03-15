@@ -32,7 +32,9 @@ const resolvers = {
   },
 
   Mutation: {
-    // add user
+    //need login and signup resolvers
+
+    // need to complete add user
     addUser: async (parent, { email }) => {
       const existingUser = await UserModel.findOne({ email });
       if (existingUser) {

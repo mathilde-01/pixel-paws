@@ -33,7 +33,7 @@ const typeDefs = `
   }
   
   type Mutation {
-    addUser(name: String!, email: String!): User
+    addUser(name: String!, email: String!, confirmPassword: String!): User
     addPet(name: String!, location: Int, birthday: String, last_interaction: String): Pet
     removePet(petId: ID!): Pet
     updateHealth(
