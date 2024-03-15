@@ -1,9 +1,5 @@
-
-
 function LoginForm({ submitHandler, changeHandler, emailState, passwordState }) {
   return (
-    
-   
       <div className="formContainer">
         <h5>WELCOME BACK!</h5>
         {/* <div className="row"> */}

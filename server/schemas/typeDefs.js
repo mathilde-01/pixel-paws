@@ -24,6 +24,11 @@ const typeDefs = `
     hunger: Float
     sleep: Float
   }
+
+  type Auth {
+    token: ID!
+    user: User
+  }
   
   type Query {
     users: [User]
@@ -34,7 +39,8 @@ const typeDefs = `
   }
   
   type Mutation {
-    addUser(email: String!, password: String!, confirmPassword: String!): User
+    addUser(email: String!, password: String!, confirmPassword: String!): Auth
+    login(email: String!, password: String!): Auth
     addPet(name: String!, location: String!, userId: ID!): Pet
     removePet(petId: ID!): Pet
     updateHealth(

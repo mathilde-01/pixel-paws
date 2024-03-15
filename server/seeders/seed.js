@@ -22,11 +22,13 @@ async function seedData() {
     const users = await User.create([
       {
         email: 'john@example.com',
-        password: await bcrypt.hash('password123', 10)
+        // password: await bcrypt.hash('password123', 10)
+        password: 'password123'
       },
       {
         email: 'jane@example.com',
-        password: await bcrypt.hash('password456', 10)
+        // password: await bcrypt.hash('password456', 10)
+        password: 'password456'
       }
     ]);
 
