@@ -5,7 +5,7 @@ const Pet = require('../models/Pet');
 const Health = require('../models/Health');
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/mern-scratch-o-rama', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://0.0.0.0:27017/mern-scratch-o-rama', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
     // Seed data
