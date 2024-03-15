@@ -5,7 +5,7 @@ const Pet = require('../models/Pet');
 const Health = require('../models/Health');
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/mern-scratch-o-rama', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/pixel-paws', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
     // Seed data
@@ -21,12 +21,10 @@ async function seedData() {
     // Seed users
     const users = await User.create([
       {
-        name: 'John Doe',
         email: 'john@example.com',
         password: await bcrypt.hash('password123', 10)
       },
       {
-        name: 'Jane Doe',
         email: 'jane@example.com',
         password: await bcrypt.hash('password456', 10)
       }
