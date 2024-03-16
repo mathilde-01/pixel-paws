@@ -20,6 +20,10 @@ footer {
     width: 100%;
 }
 
+.footerLink:hover {
+    color: #7fdeff !important;
+}
+
 
 /* inside footer style */
 .container {
@@ -30,6 +34,8 @@ footer {
 /* footer style */
 .page-footer {
     background-color: #19173c;
+    position: relative;
+    bottom: 0;
 }
 
 .white-text{
@@ -272,7 +278,7 @@ form .row {
 }
 
 .text:hover{
-    color:#52a72b
+    color:#52a72b;
 }
 
 #greenColor {
@@ -419,7 +425,7 @@ form .row {
         flex-wrap: wrap;
         width: 34%;
         left: 123px;
-        height: 200px;
+        /* height: 200px; */
     }
 
       /* container holding buttons on display pages */
@@ -444,7 +450,7 @@ form .row {
         flex-wrap: wrap;
         width: 34%;
         left: 123px;
-        height: 200px;
+        /* height: 200px; */
     }
 
       /* container holding buttons on display pages */
@@ -462,7 +468,7 @@ form .row {
         flex-wrap: wrap;
         width: 34%;
         left: 135px;
-        height: 200px;
+        /* height: 200px; */
     }
 
     .btnContainer{
@@ -472,12 +478,12 @@ form .row {
 
 @media screen and (min-width: 1400px){
     .nameContainer {
-        top: 65vh;
+        top: 470px;
         flex-basis: 42%;
         flex-wrap: wrap;
         width: 34%;
         left: 155px;
-        height: 200px;
+        /* height: 200px; */
     }
     .btnContainer{
         top: 18vh;
