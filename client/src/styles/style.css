@@ -66,13 +66,8 @@ footer {
 }
 
 .petContainer {
-    /* display: relative; */
     flex-basis: 42%;
     padding: 15px;
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: wrap; */
-
 }
 
 /* where pet lives in circle on display page */
@@ -260,17 +255,23 @@ h5 {
         font-family: "Silkscreen", sans-serif;
 
     }
+    .petContainer {
+        flex-basis: 100%;
+        padding: 15px;
+    
+    }
 
 }
 
 @media screen and (max-width: 768px) {
     .displayContainer {
+        position: absolute;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row-reverse;
-
+        justify-content: center;
         width: 90%;
-        margin: 20px;
+        margin: 40px;
         height: cal(100vh - 60px);
     }
 
@@ -311,13 +312,18 @@ h5 {
 
     /* container holding buttons on display pages */
     .btnContainer {
-        /* justify-content: flex-start; */
-        width: 100%;
+        position: relative;
+     
+        top: 221px;
+        width: 10%;
         height: 25px;
         margin: 1px;
         font-family: "Silkscreen", sans-serif;
         justify-content: space-evenly;
         margin-bottom: 10px;
+
+    
+      
     }
     .btnContainer {
         flex-basis: 42%;
