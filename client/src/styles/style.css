@@ -38,7 +38,7 @@ footer {
     bottom: 0;
 }
 
-.white-text{
+.white-text {
     text-align: left;
 }
 
@@ -269,12 +269,12 @@ form .row {
 
 /* /////////////////////////  IDs /////////////////////////*/
 
-.text{
+.text {
     text-decoration: none;
 }
 
-.text:hover{
-    color:#52a72b;
+.text:hover {
+    color: #52a72b;
 }
 
 #greenColor {
@@ -392,59 +392,105 @@ form .row {
         flex-basis: 42%;
         width: 34%;
         left: 108px;
-        height: 200px;
-        left: 123px;
+    }
+
+    /* container holding life/health levels */
+    .healthContainer {
+        position: absolute;
+        width: 34%;
+        top: 450px;
+        right: 460px;
     }
 }
 
 @media screen and (min-width: 1000px) {
     .nameContainer {
-        left: 110px;  
+        left: 110px;
     }
-}
 
-
-@media screen and (min-width: 1200px){
-    .nameContainer {
-        left: 123px; 
-        height: 200px;
-        flex-basis: 42%;
-        flex-wrap: wrap;
+    /* container holding life/health levels */
+    .healthContainer {
+        position: absolute;
         width: 34%;
-        left: 123px;
+        top: 450px;
+        right: 565px;
     }
 }
 
-@media screen and (min-width: 1349px){
+
+@media screen and (min-width: 1200px) {
     .nameContainer {
-        top: 55vh;
+        left: 123px;
+        flex-basis: 42%;
+        width: 34%;
+    }
+}
+
+@media screen and (min-width: 1349px) {
+    .nameContainer {
         left: 135px;
     }
-    .btnContainer{
+
+    .btnContainer {
         top: 18vh;
+    }
+
+    /* container holding life/health levels */
+    .healthContainer {
+        position: absolute;
+        width: 34%;
+        top: 450px;
+        right: 638px;
     }
 }
 
-@media screen and (min-width: 1400px){
+@media screen and (min-width: 1400px) {
     .nameContainer {
-
-        top: 65vh;
-        left: 155px;
-        top: 470px;
+        left: 139px;
+        top: 45vh;
         flex-basis: 42%;
         flex-wrap: wrap;
         width: 34%;
-        left: 155px;
+
     }
-  
-    .btnContainer{
+
+    .btnContainer {
         top: 30vh;
     }
-}
 
-@media screen and (min-width: 1500px){
-    .nameContainer {
-        left: 151px;
+    /* container holding life/health levels */
+    .healthContainer {
+        position: absolute;
+        width: 34%;
+        top: 450px;
+        right: 668px;
     }
 }
 
+@media screen and (min-width: 1500px) {
+    .nameContainer {
+        left: 149px;
+    }
+
+    /* container holding life/health levels */
+    .healthContainer {
+        position: absolute;
+        width: 34%;
+        top: 450px;
+        right: 710px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .nameContainer {
+        left: 210px;
+    }
+
+    /* container holding life/health levels */
+    .healthContainer {
+        position: absolute;
+        width: 34%;
+        top: 495px;
+        right: 850px;
+    }
+}
