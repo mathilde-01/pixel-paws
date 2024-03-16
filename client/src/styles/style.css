@@ -263,6 +263,10 @@ h5 {
         padding: 15px;
     
     }
+    .btn-small {
+        width: 60px;
+       
+    }
 
 }
 
@@ -341,10 +345,11 @@ h5 {
     .btn-small{
         width: 90%;
         top: 50px;
+    }
 
     .btn-small {
         width: 90%;
 
     }
-}
+
 }
