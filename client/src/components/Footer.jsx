@@ -19,11 +19,11 @@ export default function Footer() {
           <div className="col l4 offset-l2 s12">
             <h5 className="white-text">Meet the Team</h5>
             <ul>
-              <li><a className="grey-text text-lighten-3" href="#!">Mathilde Alacron - Back End</a></li>
-              <li><a className="grey-text text-lighten-3" href="#!">Diana Discher - Team Lead</a></li>
-              <li><a className="grey-text text-lighten-3" href="#!">Scott Denonn - Back End</a></li>
-              <li><a className="grey-text text-lighten-3" href="#!">Opal Snellenberger - Back End</a></li>
-              <li><Link onClick={()=> openInNewTab("https://hprice-web-dev-portfolio.netlify.app/")} className="grey-text text-lighten-3" href="#!">Hannah Price - Front End</Link></li>
+              <li><Link onClick={()=> openInNewTab("https://github.com/mathilde-01")}  className="grey-text text-lighten-3" href="#!">Mathilde Alacron - Back End</Link></li>
+              <li><Link onClick={()=> openInNewTab("https://www.dianamariedischer.com/")}  className="grey-text text-lighten-3" href="#!">Diana Discher - Team Lead</Link></li>
+              <li><Link onClick={()=> openInNewTab("https://github.com/scottd988")}  className="grey-text text-lighten-3" href="#!">Scott Denonn - Back End</Link></li>
+              <li><Link onClick={()=> openInNewTab("https://github.com/OpalSnellneberger")}  className="grey-text text-lighten-3" href="#!">Opal Snellenberger - Back End</Link></li>
+              <li><Link onClick={()=> openInNewTab("https://hprice-web-dev-portfolio.netlify.app/")} className="grey-text text-lighten-3" href="#!" >Hannah Price - Front End</Link></li>
             </ul>
           </div>
         </div>
@@ -31,7 +31,7 @@ export default function Footer() {
       <div className="footer-copyright">
         <div className="container">
           © 2024 Copyright
-          <Link onClick={()=> openInNewTab("https://github.com/mathilde-01/pixel-paws")} className="grey-text text-lighten-4 right" href="#!">Pixel Pals GitHub</Link>
+          <Link onClick={()=> openInNewTab("https://github.com/mathilde-01/pixel-paws")} className="grey-text text-lighten-4 right" href="#!" >Pixel Pals GitHub</Link>
         </div>
       </div>
     </footer>
