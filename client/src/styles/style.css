@@ -3,6 +3,9 @@ body {
     font-family: "Red Hat Mono", monospace;
     min-height: 100vh;
     flex-direction: column;
+    background-image: url('../../public/backgrounds/background.png');
+    background-image: url('../../public/backgrounds/background.png'), linear-gradient(#060623, #8f7ec8);
+    background-size: 400px;
 
 }
 
@@ -20,17 +23,17 @@ footer {
 
 /* inside footer style */
 .container {
-    background-color: #333457;
+    background-color: #201d48;
 }
 
 /* footer style */
 .page-footer {
-    background-color: #2C2A4A;
+    background-color: #19173c;
 }
 
 /* Navbar */
 .nav-wrapper {
-    background-color: #2C2A4A;
+    background-color: #19173c;
     font-family: "Silkscreen", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -40,12 +43,20 @@ footer {
 }
 
 /* Navbar right side*/
+.sidenav {
+    background-color: #cdbeff;
+    padding-right: 10px;
+}
+
 .right {
     font-family: "Red Hat Mono", monospace;
     font-optical-sizing: auto;
     font-style: normal;
     padding-right: 2%;
+}
 
+.margin-top-50 {
+    margin-top: 40px;
 }
 
 /* Navbar -Pixel Pals*/
@@ -86,7 +97,7 @@ footer {
     justify-content: center;
     max-width: 700px;
     max-height: 700px;
-    background-image: url(./backgrounds/forest.png);
+    background-image: url(./backgrounds/pet-backgrounds/forest.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -97,24 +108,33 @@ canvas {
 }
 
 /* stand for circle - design */
+/* i added perspective to make a trapezoid which messed with the placement a little
+but it should be where it needs to be now, that's also why i removed the border */
 .petStand {
     /* position: absolute; */
     bottom: -15px;
     /* left: 50%; */
     transform: translateX(155%);
     width: 20vw;
-    border: 3px solid #7fdeff;
+    /* border: 3px solid #7fdeff; */
     height: 30px;
+    height: 35px;
+    width: 30vw;
+    transform: translateX(87%) perspective(2px) rotateX(1deg);
+    background: rgb(127,222,255);
+    background: linear-gradient(90deg, rgba(127,222,255,1) 0%, rgba(205,242,255,1) 49%, rgba(165,232,255,1) 62%, rgba(127,222,255,1) 100%);
 }
 
 /* container holding buttons on display pages */
+/* hey hannah, i commented out the margins here because i thought it looked better, 
+but put them back if they help with the layout */
 .btnContainer {
     flex-basis: 42%;
     height: 25px;
-    margin: 15px;
+    /* margin: 15px; */
     font-family: "Silkscreen", sans-serif;
     justify-content: space-evenly;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     text-align: center;
 }
 
@@ -122,6 +142,7 @@ canvas {
     margin: 5px;
     width: 70px;
     padding: 2px;
+    border-radius: 5px;
 }
 
 .mainHealthContainer {
@@ -132,17 +153,17 @@ canvas {
 /* container holding life/health levels */
 .healthContainer {
     width: 90%;
-    padding: 20px;
+    padding: 15px;
     border-radius: 7px;
     margin: 0 auto;
     margin-top: 10px;
     font-family: "Silkscreen", sans-serif;
     border: 1px solid transparent;
-    background-color: #4f518c;
+    background-color: rgba(24, 21, 56, 0.6);
 }
 
 .nameContainer {
-    background-color: #4f518c;
+    background-color: rgba(24, 21, 56, 0.6);
     border-radius: 7px;
     margin: 0 auto;
     margin-top: 20px;
@@ -163,6 +184,23 @@ canvas {
     margin: 0;
 }
 
+.bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    color: white;
+    height: 20px;
+}
+
+.bar p {
+    margin-right: 10px;
+}
+
+.progress {
+    top: 4px;
+}
 
 /* ////////  Sign-in & Log-in ////////////////////////////////// */
 
@@ -175,34 +213,39 @@ h5 {
 .formPage {
     display: flex;
     justify-content: center;
+    align-content: center;
 }
 
 .formContainer {
     font-family: "Silkscreen", sans-serif;
-    width: 70%;
-    background-color: #4f518c;
+    width: 80%;
+    background-color: #26285a;
     margin: 10%;
     border-radius: 10px;
     padding: 20px;
+    text-align: center;
+}
 
+form .row {
+    margin-bottom: 5px;
 }
 
 .input-field {
     background-color: white;
     border-radius: 10px;
-    color: #2C2A4A;
+    color: #19173c;
 }
 
 /* style for input */
 .input-field {
     background-color: white;
     border-radius: 10px;
-    color: #2C2A4A;
+    color: #19173c;
     height: 45px;
 }
 
 .btn {
-    background-color: #2C2A4A;
+    background-color: #19173c;
     font-family: "Silkscreen", sans-serif;
 }
 
@@ -220,22 +263,22 @@ h5 {
 
 #greenColor {
     /* specify green color - used on buttons */
-    background-color: #6cbf46;
+    background-color: #52a72b;
 }
 
 /* specify green color - used on buttons */
 #blueColor {
-    background-color: #7fdeff;
+    background-color: #0aa1bc;
 }
 
 /* specify green color - used on buttons */
 #medPurpleColor {
-    background-color: #4f518c;
+    background-color: #3155c4;
 }
 
 /* specify green color - used on buttons */
 #orangeColor {
-    background-color: #faba6d;
+    background-color: #E0871B;
 }
 
 /* specify font on username input */
@@ -254,7 +297,7 @@ h5 {
     }
 
     .btn {
-        background-color: #2C2A4A;
+        background-color: #19173c;
         font-family: "Silkscreen", sans-serif;
 
     }
@@ -302,8 +345,11 @@ h5 {
         /* left: 50%; */
         transform: translateX(55%);
         width: 20vw;
-        border: 3px solid #7fdeff;
+        /* border: 3px solid #7fdeff; */
         height: 30px;
+        height: 40px;
+        width: 15vw;
+        transform: translateX(86%) perspective(2px) rotateX(1deg);
     }
 
     .mainHealthContainer {
@@ -341,10 +387,11 @@ h5 {
     .btn-small{
         width: 90%;
         top: 50px;
-
-    .btn-small {
-        width: 90%;
-
     }
-}
+
+    .formContainer {
+        width: 50%;
+        padding: 20px 40px;
+    }
+
 }
