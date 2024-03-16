@@ -38,6 +38,7 @@ footer {
 
 
 
+
 /* Navbar */
 .nav-wrapper {
     background-color: #19173c;
@@ -266,7 +267,13 @@ form .row {
 
 /* /////////////////////////  IDs /////////////////////////*/
 
+.text{
+    text-decoration: none;
+}
 
+.text:hover{
+    color:#52a72b
+}
 
 #greenColor {
     /* specify green color - used on buttons */
