@@ -97,7 +97,7 @@ footer {
     justify-content: center;
     max-width: 700px;
     max-height: 700px;
-    background-image: url('./backgrounds/pet-backgrounds/forest.png');
+    background-image: url('../../public/backgrounds/pet-backgrounds/forest.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
