@@ -122,20 +122,35 @@ export default function Display() {
             </div>
             {/* <div className='mainHealthContainer'> */}
                 <div className="healthContainer">
-                    <div className="progress">
-                        <div className="determinate" style={{ width: '70%' }}></div>
+                    <div className='bar'>
+                        <p>Health:</p>
+                        <div className="progress">
+                            <div className="determinate" id="healthBar" style={{ width: '70%' }}></div>
+                        </div>
                     </div>
-                    <div className="progress">
-                        <div className="determinate" id="greenColor" style={{ width: '70%' }}></div>
+                    <div className='bar'>
+                        <p>Fun:</p>
+                        <div className="progress">
+                            <div className="determinate" id="greenColor" style={{ width: '70%' }}></div>
+                        </div>
                     </div>
-                    <div className="progress">
-                        <div className="determinate" id="orangeColor" style={{ width: '70%' }}></div>
+                    <div className='bar'>
+                        <p>Hunger:</p>
+                        <div className="progress">
+                            <div className="determinate" id="orangeColor" style={{ width: '70%' }}></div>
+                        </div>
                     </div>
-                    <div className="progress">
-                        <div className="determinate" id="blueColor" style={{ width: '70%' }}></div>
+                    <div className='bar'>
+                        <p>Hygiene:</p>
+                        <div className="progress">
+                            <div className="determinate" id="blueColor" style={{ width: '70%' }}></div>
+                        </div>
                     </div>
-                    <div className="progress">
-                        <div className="determinate" id="medPurpleColor" style={{ width: '70%' }}></div>
+                    <div className='bar'>
+                        <p>Energy:</p>
+                        <div className="progress">
+                            <div className="determinate" id="medPurpleColor" style={{ width: '70%' }}></div>
+                        </div>
                     </div>
                 </div>
             {/* </div> */}

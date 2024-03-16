@@ -11,7 +11,10 @@ export default function NavBar() {
     return (
         <nav>
             <div className="nav-wrapper">
-                <a href="/" className="brand-logo">Pixel Pals</a>
+                <a href="/" className="brand-logo">
+                    Pixel Pals
+                    <img src="./pixel-bat.png" style={{height: '30px', position: 'relative', top: '4px', left: '12px' }}/>
+                    </a>
                 <a href="#" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                 <ul className="right hide-on-med-and-down" id="navRight">
                     {['display', 'login', 'signup'].map((link, index) => (
