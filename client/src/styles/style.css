@@ -14,6 +14,9 @@ main {
 
 footer {
     font-family: "Red Hat Mono", monospace;
+
+    width: 100%;
+main
     bottom: 0;
 }
 
@@ -215,10 +218,11 @@ h5 {
 
 
 /* /////////////////////////  IDs /////////////////////////*/
-/* specify green color - used on buttons */
+
 
 
 #greenColor {
+    /* specify green color - used on buttons */
     background-color: #6cbf46;
 }
 
@@ -336,7 +340,13 @@ h5 {
         margin-bottom: 10px;
     }
 
+
+    .btn-small{
+        width: 90%;
+        top: 50px;
+
     .btn-small {
         width: 90%;
+
     }
 }
