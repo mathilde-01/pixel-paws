@@ -17,7 +17,6 @@ main {
 
 footer {
     font-family: "Red Hat Mono", monospace;
-
     width: 100%;
 }
 
@@ -63,7 +62,6 @@ footer {
 .brand-logo {
     width: 300px;
     margin-left: 5%;
-
 }
 
 
@@ -84,7 +82,6 @@ footer {
 
 /* where pet lives in circle on display page */
 .petCircle {
-    /* margin: 10px, 10px, 10px, 0px; */
     position: relative;
     margin-top: 1%;
     margin-left: 1%;
@@ -121,8 +118,8 @@ but it should be where it needs to be now, that's also why i removed the border 
     height: 35px;
     width: 30vw;
     transform: translateX(87%) perspective(2px) rotateX(1deg);
-    background: rgb(127,222,255);
-    background: linear-gradient(90deg, rgba(127,222,255,1) 0%, rgba(205,242,255,1) 49%, rgba(165,232,255,1) 62%, rgba(127,222,255,1) 100%);
+    background: rgb(127, 222, 255);
+    background: linear-gradient(90deg, rgba(127, 222, 255, 1) 0%, rgba(205, 242, 255, 1) 49%, rgba(165, 232, 255, 1) 62%, rgba(127, 222, 255, 1) 100%);
 }
 
 /* container holding buttons on display pages */
@@ -163,6 +160,8 @@ but put them back if they help with the layout */
 }
 
 .nameContainer {
+    flex-basis: 42%;
+    flex-wrap: wrap;
     background-color: rgba(24, 21, 56, 0.6);
     border-radius: 7px;
     margin: 0 auto;
@@ -289,6 +288,9 @@ form .row {
 
 
 @media screen and (max-width: 360px) {
+    .displayContainer {
+        justify-content: center;
+    }
 
     /* form welcome */
     h5 {
@@ -301,14 +303,16 @@ form .row {
         font-family: "Silkscreen", sans-serif;
 
     }
+
     .petContainer {
         flex-basis: 100%;
         padding: 15px;
-    
+
     }
+
     .btn-small {
         width: 60px;
-       
+
     }
 
 }
@@ -365,30 +369,12 @@ form .row {
 
     /* container holding buttons on display pages */
     .btnContainer {
-        position: relative;
-     
-        top: 221px;
-        width: 10%;
-        height: 25px;
-        margin: 1px;
-        font-family: "Silkscreen", sans-serif;
-        justify-content: space-evenly;
-        margin-bottom: 10px;
-
-    
-      
-    }
-    .btnContainer {
         flex-basis: 42%;
-        height: 25px;
-        margin: 1px;
-        font-family: "Silkscreen", sans-serif;
-        justify-content: space-evenly;
-        margin-bottom: 10px;
+        position: relative;
+        top: -10%;
     }
 
-
-    .btn-small{
+    .btn-small {
         width: 90%;
         top: 50px;
     }
@@ -398,4 +384,93 @@ form .row {
         padding: 20px 40px;
     }
 
+    .nameContainer {
+        position: absolute;
+        flex-wrap: wrap;
+        top: 40vh;
+        width: 35%;
+        /* left: 89px;
+         */
+    }
+
+}
+
+
+
+@media screen and (min-width: 998px) {
+    .nameContainer {
+        /* top: 55vh; */
+        flex-basis: 42%;
+        flex-wrap: wrap;
+        width: 34%;
+        left: 123px;
+        height: 200px;
+    }
+
+      /* container holding buttons on display pages */
+      .btnContainer {
+        flex-basis: 42%;
+        position: relative;
+        top: -20%;
+    }
+}
+
+@media screen and (min-width: 100px) {
+    .nameContainer {
+        left: 110px;  
+    }
+}
+
+
+@media screen and (min-width: 1200px){
+    .nameContainer {
+        /* top: 55vh; */
+        flex-basis: 42%;
+        flex-wrap: wrap;
+        width: 34%;
+        left: 123px;
+        height: 200px;
+    }
+
+      /* container holding buttons on display pages */
+      .btnContainer {
+        flex-basis: 42%;
+        /* position: relative; */
+        top: -30%;
+    }
+}
+
+@media screen and (min-width: 1349px){
+    .nameContainer {
+        top: 55vh;
+        flex-basis: 42%;
+        flex-wrap: wrap;
+        width: 34%;
+        left: 135px;
+        height: 200px;
+    }
+
+    .btnContainer{
+        top: 10vh;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .nameContainer {
+        top: 65vh;
+        flex-basis: 42%;
+        flex-wrap: wrap;
+        width: 34%;
+        left: 155px;
+        height: 200px;
+    }
+    .btnContainer{
+        top: 18vh;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .nameContainer {
+        left: 215px;
+    }
 }
