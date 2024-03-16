@@ -9,11 +9,13 @@ body {
 main {
     flex: 1 0 auto;
     width: 100vw;
+    min-height: 70vh;
 }
 
 footer {
     font-family: "Red Hat Mono", monospace;
-    margin-top: 50px;
+    width: 100%;
+    bottom: 0;
 }
 
 
@@ -213,10 +215,11 @@ h5 {
 
 
 /* /////////////////////////  IDs /////////////////////////*/
-/* specify green color - used on buttons */
+
 
 
 #greenColor {
+    /* specify green color - used on buttons */
     background-color: #6cbf46;
 }
 
@@ -263,9 +266,9 @@ h5 {
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
     .displayContainer {
-        position: absolute;
+        /* position: absolute; */
         display: flex;
         flex-wrap: wrap;
         flex-direction: row-reverse;
@@ -332,5 +335,10 @@ h5 {
         font-family: "Silkscreen", sans-serif;
         justify-content: space-evenly;
         margin-bottom: 10px;
+    }
+
+    .btn-small{
+        width: 90%;
+        top: 50px;
     }
 }
