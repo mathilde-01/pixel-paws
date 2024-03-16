@@ -402,7 +402,7 @@ form .row {
     .nameContainer {
         position: absolute;
         flex-wrap: wrap;
-        top: 40vh;
+        top: 45vh;
         width: 35%;
         /* left: 89px;
          */
@@ -484,8 +484,8 @@ form .row {
     }
 }
 
-@media screen and (min-width: 1400px){
+@media screen and (min-width: 1500px){
     .nameContainer {
-        left: 215px;
+        left: 151px;
     }
 }
