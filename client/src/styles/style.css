@@ -36,9 +36,6 @@ footer {
     text-align: left;
 }
 
-
-
-
 /* Navbar */
 .nav-wrapper {
     background-color: #19173c;
@@ -47,7 +44,6 @@ footer {
     font-style: normal;
     width: 100%;
     margin-bottom: 50px;
-
 }
 
 /* Navbar right side*/
@@ -346,47 +342,24 @@ form .row {
 
     /* where pet lives in circle on display page */
     .petCircle {
-        /* margin: 10px, 10px, 10px, 0px; */
         position: relative;
         margin-top: 1%;
         margin-left: 1%;
         margin-right: 1%;
         width: 40vw;
-        border: 5px solid #7fdeff;
         height: 40vw;
-        border-radius: 50%;
         display: flex;
-        justify-content: center;
-        max-width: 700px;
-        max-height: 700px;
     }
 
     /* stand for circle - design */
     .petStand {
-        /* position: absolute; */
         bottom: -15px;
-        /* left: 50%; */
         transform: translateX(55%);
         width: 20vw;
-        /* border: 3px solid #7fdeff; */
         height: 30px;
         height: 40px;
         width: 15vw;
         transform: translateX(86%) perspective(2px) rotateX(1deg);
-    }
-
-    .mainHealthContainer {
-        width: 326px;
-        padding: 5px;
-        flex-basis: 100%;
-
-    }
-
-    /* container holding buttons on display pages */
-    .btnContainer {
-        flex-basis: 42%;
-        position: relative;
-        top: -10%;
     }
 
     .btn-small {
@@ -407,26 +380,14 @@ form .row {
         left: 89px;
          
     }
-
 }
-
-
 
 @media screen and (min-width: 998px) {
     .nameContainer {
-        /* top: 55vh; */
         flex-basis: 42%;
-        flex-wrap: wrap;
         width: 34%;
-        left: 123px;
+        left: 108px;
         height: 200px;
-    }
-
-      /* container holding buttons on display pages */
-      .btnContainer {
-        flex-basis: 42%;
-        position: relative;
-        top: -20%;
     }
 }
 
@@ -439,48 +400,28 @@ form .row {
 
 @media screen and (min-width: 1200px){
     .nameContainer {
-        /* top: 55vh; */
-        flex-basis: 42%;
-        flex-wrap: wrap;
-        width: 34%;
-        left: 123px;
+        left: 123px; 
         height: 200px;
-    }
-
-      /* container holding buttons on display pages */
-      .btnContainer {
-        flex-basis: 42%;
-        /* position: relative; */
-        top: -30%;
     }
 }
 
 @media screen and (min-width: 1349px){
     .nameContainer {
         top: 55vh;
-        flex-basis: 42%;
-        flex-wrap: wrap;
-        width: 34%;
         left: 135px;
-        height: 200px;
     }
-
     .btnContainer{
-        top: 10vh;
+        top: 18vh;
     }
 }
 
 @media screen and (min-width: 1400px){
     .nameContainer {
         top: 65vh;
-        flex-basis: 42%;
-        flex-wrap: wrap;
-        width: 34%;
         left: 155px;
-        height: 200px;
     }
     .btnContainer{
-        top: 18vh;
+        top: 30vh;
     }
 }
 
@@ -489,3 +430,4 @@ form .row {
         left: 151px;
     }
 }
+
