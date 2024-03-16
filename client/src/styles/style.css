@@ -20,15 +20,23 @@ footer {
     width: 100%;
 }
 
+
 /* inside footer style */
 .container {
     background-color: #201d48;
+    text-align: left;
 }
 
 /* footer style */
 .page-footer {
     background-color: #19173c;
 }
+
+.white-text{
+    text-align: left;
+}
+
+
 
 /* Navbar */
 .nav-wrapper {
