@@ -306,6 +306,10 @@ form .row {
         padding: 15px;
     
     }
+    .btn-small {
+        width: 60px;
+       
+    }
 
 }
 
