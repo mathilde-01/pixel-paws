@@ -21,12 +21,9 @@ export default function Display() {
         // Change animation to "Roll"
         setPlayAnimation(true);
 
-        // fun mutation
-        // try {
-        //     await funMutation(); 
-        // } catch (error) {
-        //     console.error('Error performing mutation:', error);
-        // }
+        // get pet data
+        // add to bar
+        // call update pet
 
         // Reset animation to "Idle_A" after 1 second
         setTimeout(() => {
@@ -35,7 +32,7 @@ export default function Display() {
     };
 
     const handleCleanButtonClick = async () => {
-        // Change animation to "Death"
+        // Change animation to "Clean"
         setCleanAnimation(true);
 
         // sleep mutation
@@ -69,7 +66,7 @@ export default function Display() {
     };
 
     const handleFeedButtonClick = async () => {
-        // Change animation to "Death"
+        // Change animation to "Feed"
         setFeedAnimation(true);
 
         // sleep mutation

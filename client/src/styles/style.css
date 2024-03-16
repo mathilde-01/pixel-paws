@@ -20,6 +20,10 @@ footer {
     width: 100%;
 }
 
+.footerLink:hover {
+    color: #7fdeff !important;
+}
+
 
 /* inside footer style */
 .container {
@@ -30,6 +34,8 @@ footer {
 /* footer style */
 .page-footer {
     background-color: #19173c;
+    position: relative;
+    bottom: 0;
 }
 
 .white-text{
@@ -268,7 +274,7 @@ form .row {
 }
 
 .text:hover{
-    color:#52a72b
+    color:#52a72b;
 }
 
 #greenColor {
@@ -378,7 +384,6 @@ form .row {
         top: 45vh;
         width: 35%;
         left: 89px;
-         
     }
 }
 
@@ -388,6 +393,7 @@ form .row {
         width: 34%;
         left: 108px;
         height: 200px;
+        left: 123px;
     }
 }
 
@@ -402,6 +408,10 @@ form .row {
     .nameContainer {
         left: 123px; 
         height: 200px;
+        flex-basis: 42%;
+        flex-wrap: wrap;
+        width: 34%;
+        left: 123px;
     }
 }
 
@@ -417,9 +427,16 @@ form .row {
 
 @media screen and (min-width: 1400px){
     .nameContainer {
+
         top: 65vh;
         left: 155px;
+        top: 470px;
+        flex-basis: 42%;
+        flex-wrap: wrap;
+        width: 34%;
+        left: 155px;
     }
+  
     .btnContainer{
         top: 30vh;
     }
