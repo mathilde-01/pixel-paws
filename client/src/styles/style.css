@@ -14,7 +14,9 @@ main {
 
 footer {
     font-family: "Red Hat Mono", monospace;
+
     width: 100%;
+main
     bottom: 0;
 }
 
@@ -116,6 +118,7 @@ canvas {
     font-family: "Silkscreen", sans-serif;
     justify-content: space-evenly;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .btn-small {
@@ -337,8 +340,13 @@ h5 {
         margin-bottom: 10px;
     }
 
+
     .btn-small{
         width: 90%;
         top: 50px;
+
+    .btn-small {
+        width: 90%;
+
     }
 }
