@@ -21,7 +21,7 @@ footer {
 }
 
 .footerLink:hover {
-    color: #7cfb40 !important;
+    color: #ffa537 !important;
 }
 
 
@@ -415,15 +415,18 @@ form .row {
 @media screen and (min-width: 1348px) {
     .nameContainer {
         left: 135px;
+        top: 424px;
     }
 
-    .btnContainer {
-        top: 18vh;
+    .btnContainer{
+        margin-top: 130px;
+        margin-left: -20px;
     }
 
     /* container holding life/health levels */
     .healthContainer {
         left: 135px;
+        top: 544px;
     }
 }
 
@@ -435,6 +438,7 @@ form .row {
     /* container holding life/health levels */
     .healthContainer {
        left: 155px;
+      
     }
 }
 
