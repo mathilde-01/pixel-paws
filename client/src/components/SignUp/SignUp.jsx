@@ -10,6 +10,11 @@ export default function SignUp(){
     const submitHandler = async (event) => {
         event.preventDefault();
         console.log(formState);
+        if (formState.password !== formState.confirmPassword) {
+          console.log('Passwords do not match');
+          // You might want to display an error message to the user here
+          return;
+        }
     // add validation for form fields
         try{
           // send login data to backend
@@ -26,7 +31,7 @@ export default function SignUp(){
           const token = data?.addUser.token || '';
     
           // save token data on frontend
-          auth.login(token);
+          auth.signin(token);
     
           // clear out login form
           setFormState({

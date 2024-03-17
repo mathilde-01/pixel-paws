@@ -34,7 +34,7 @@ export default function Display() {
     const [updatePetMutation] = useMutation(UPDATE_PET_MUTATION);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div></div>;
     }
 
     const user = data?.user || {};
@@ -53,7 +53,7 @@ export default function Display() {
     const differenceInMilliseconds = Math.abs(today - birthday);
     const millisecondsInDay = 1000 * 60 * 60 * 24;
     const daysOld = Math.floor(differenceInMilliseconds / millisecondsInDay);
-    const days = daysOld > 1 ? 'days' : 'day';
+    const days = daysOld > 1 ? `${daysOld} days old` : daysOld === 1 ? '1 day old' : 'born today';
 
     const handleUpdatePet = async (petFun, petClean, petSleep, petHunger) => {
         await refetch();
@@ -78,7 +78,7 @@ export default function Display() {
     };
 
     const handlePlayButtonClick = async () => {
-        petFun = pet.health.fun + 0.2;
+        petFun = pet.health.fun + 0.15;
         if (petFun > 1) {
             petFun = 1
         }
@@ -90,7 +90,7 @@ export default function Display() {
     };
 
     const handleCleanButtonClick = async () => {
-        petClean = pet.health.cleanliness + 0.2;
+        petClean = pet.health.cleanliness + 0.15;
         if (petClean > 1) {
             petClean = 1
         }
@@ -102,7 +102,7 @@ export default function Display() {
     };
 
     const handleSleepButtonClick = async () => {
-        petSleep = pet.health.sleep + 0.2;
+        petSleep = pet.health.sleep + 0.15;
         if (petSleep > 1) {
             petSleep = 1
         }
@@ -114,7 +114,7 @@ export default function Display() {
     };
 
     const handleFeedButtonClick = async () => {
-        petHunger = pet.health.hunger + 0.2;
+        petHunger = pet.health.hunger + 0.15;
         if (petHunger > 1) {
             petHunger = 1
         }
@@ -166,7 +166,7 @@ export default function Display() {
             </div>
             <div className="nameContainer">
                 <h3 className="displayHeader">{pet.name}</h3>
-                <p id="description">{pet.type}, {daysOld} {days} old</p>
+                <p id="description">{pet.type}, {days}</p>
             </div>
             {/* <div className='mainHealthContainer'> */}
                 <div className="healthContainer">

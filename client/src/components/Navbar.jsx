@@ -28,7 +28,7 @@ export default function NavBar() {
             <ul className="sidenav" id="nav-mobile">
                 <li>
                     <div className="sidenav-close right">
-                        <i className="material-icons black-text text-darken-2" style={{ cursor: 'pointer' }}>close</i>
+                        <i className="material-icons white-text text-darken-2" style={{ cursor: 'pointer' }}>close</i>
                     </div>
                 </li>
                 <div className='margin-top-50'></div>
@@ -56,7 +56,7 @@ export default function NavBar() {
             <ul className="sidenav" id="nav-mobile">
                 <li>
                     <div className="sidenav-close right">
-                        <i className="material-icons black-text text-darken-2" style={{ cursor: 'pointer' }}>close</i>
+                        <i className="material-icons white-text text-darken-2" style={{ cursor: 'pointer' }}>close</i>
                     </div>
                 </li>
                 <div className='margin-top-50'></div>

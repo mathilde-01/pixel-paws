@@ -1,5 +1,5 @@
 body {
-    background-color: #907AD6;
+    background-color: #19173c;
     font-family: "Red Hat Mono", monospace;
     min-height: 100vh;
     flex-direction: column;
@@ -54,8 +54,12 @@ footer {
 
 /* Navbar right side*/
 .sidenav {
-    background-color: #cdbeff;
+    background-color: #0e0c28;
     padding-right: 10px;
+}
+
+.sidenav li>a {
+    color: white;
 }
 
 .right {

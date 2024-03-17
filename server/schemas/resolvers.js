@@ -48,7 +48,10 @@ const resolvers = {
   Mutation: {
     //need login and signup resolvers
     login: async (parent, { email, password }) => {
-      const user = await UserModel.findOne({ email });
+      
+      const lowerCaseEmail = email.toLowerCase();
+
+      const user = await UserModel.findOne({ email: lowerCaseEmail });
 
       if (!user) {
         console.log("could not find user")
@@ -67,7 +70,10 @@ const resolvers = {
     },
     // need to complete add user
     addUser: async (parent, { email, password }) => {
-      const existingUser = await UserModel.findOne({ email });
+
+      const lowerCaseEmail = email.toLowerCase();
+
+      const existingUser = await UserModel.findOne({ email: lowerCaseEmail });
       if (existingUser) {
         throw new Error('User with this email already exists');
       }
