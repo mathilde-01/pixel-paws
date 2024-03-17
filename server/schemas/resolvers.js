@@ -119,6 +119,23 @@ const resolvers = {
         }
       );
     },
+    updatePet: async (parent, { petId, ...updateData }, context, info) => {
+      try {
+        const updatedPet = await Pet.findByIdAndUpdate(
+          petId,
+          { $set: updateData },
+          { new: true, runValidators: true }
+        );
+
+        if (!updatedPet) {
+          throw new Error('Pet not found');
+        }
+
+        return updatedPet;
+      } catch (error) {
+        throw new Error(`Failed to update pet: ${error.message}`);
+      }
+    },
   },
 };
 

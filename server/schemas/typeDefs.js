@@ -50,6 +50,19 @@ const typeDefs = `
       hunger: Float
       sleep: Float
     ): Health
+    updatePet(
+      petId: ID!
+      name: String
+      type: String
+      location: String
+      alive: Boolean
+      birthday: String
+      last_interaction: String
+      userId: ID
+      health: HealthInput
+    ): Pet
+
+
   }
 `;
 
