@@ -6,14 +6,18 @@
 ## Description
 Pixel Paws is a delightful pet simulator that draws inspiration from the iconic Tamagotchi. In this virtual pet experience, users get the chance to care for their digital companion, ensuring it remains happy and healthy. Just like real pets, Pixel Paw requires attention to its needs, such as feeding, cleaning, and playtime. Beware, neglecting your Pixel Paw may lead to unfortunate consequences—keep it thriving by giving it the love and care it deserves. The beauty of Pixel Paws lies in its portability; take your digital companion with you everywhere on your phone.
 
-## Usage 
-Getting started: Log into your Pixel Paw account and adopt a new pal   
-Play: To keep your Pixel Paw entertained and happy, you can play with it  
-Sleep: Just like real pets, Pixel Paws need sleep too! Make sure your Pixel Paw sleeps during the night or whenever it's tired  
-Clean: Pixel Paws also need to be cleaned up after a while after they make a mess  
-Feed: Your Pixel Paw needs to be fed regularly  
-Health: Pay attention to your Pixel Paw's health meters. Make sure it gets enough food, sleep, and playtime to stay happy and healthy. 
+## Instructions 
+Getting Started: Log into your Pixel Paw account and adopt a new pal.  
 
+Interaction Menu Items:  
+
+Play: To keep your Pixel Paw entertained and happy, you can play with it.  
+Sleep: Just like real pets, Pixel Paws need sleep too! Make sure your Pixel Paw sleeps during the night or whenever it's tired.  
+Clean: Pixel Paws also need to be cleaned up after they make a mess.  
+Feed: Your Pixel Paw needs to be fed regularly.  
+You will need to pay attention to your Pixel Paw's health meters and make sure it gets enough food, sleep, and playtime to stay happy and healthy.  
+
+Don't forget to log in and interact with your Pixel Paw daily to keep it alive and healthy!  
 
 ## Technologies used
 * React: The frontend of Pixel Paws is developed using React, providing a dynamic and responsive user interface.  
