@@ -116,15 +116,10 @@ canvas {
 }
 
 /* stand for circle - design */
-/* i added perspective to make a trapezoid which messed with the placement a little
-but it should be where it needs to be now, that's also why i removed the border */
 .petStand {
-    /* position: absolute; */
     bottom: -15px;
-    /* left: 50%; */
     transform: translateX(155%);
     width: 20vw;
-    /* border: 3px solid #7fdeff; */
     height: 30px;
     height: 35px;
     width: 30vw;
@@ -134,15 +129,11 @@ but it should be where it needs to be now, that's also why i removed the border 
 }
 
 /* container holding buttons on display pages */
-/* hey hannah, i commented out the margins here because i thought it looked better, 
-but put them back if they help with the layout */
 .btnContainer {
     flex-basis: 42%;
     height: 25px;
-    /* margin: 15px; */
     font-family: "Silkscreen", sans-serif;
     justify-content: space-evenly;
-    /* margin-bottom: 10px; */
     text-align: center;
 }
 
@@ -399,25 +390,7 @@ form .row {
         position: absolute;
         width: 34%;
         top: 450px;
-        right: 550px;
-    }
-}
-
-
-@media screen and (min-width: 1000px) {
-    /* container holding life/health levels */
-    .healthContainer {
-        flex-basis: 42%;
-        position: absolute;
-        width: 34%;
-        top: 465px;
-        right: 554px;
-    }
-}
-
-@media screen and (min-width: 1194px){
-    .healthContainer {
-        right: 670px;
+        left: 108px;
     }
 }
 
@@ -425,12 +398,11 @@ form .row {
 @media screen and (min-width: 1200px) {
     .nameContainer {
         left: 123px;
-        flex-basis: 42%;
-        width: 34%;
     }
       /* container holding life/health levels */
       .healthContainer {
-        right: 669px;
+       left: 125px;
+       top: 475px;
     }
 
 }
@@ -446,42 +418,7 @@ form .row {
 
     /* container holding life/health levels */
     .healthContainer {
-        right: 755px;
-    }
-}
-
-@media screen and (min-width: 1360px) {
-    .nameContainer {
         left: 135px;
-        width: 34%;
-
-    }
-
-    .btnContainer {
-        top: 30vh;
-    }
-
-    /* container holding life/health levels */
-    .healthContainer {
-        right: 763px;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    .nameContainer {
-        left: 139px;
-    }
-
-    /* container holding life/health levels */
-    .healthContainer {
-        right: 784px;
-    }
-}
-
-@media screen and (min-width: 1500px) {
-    /* container holding life/health levels */
-    .healthContainer {
-        right: 890px;
     }
 }
 
@@ -492,18 +429,17 @@ form .row {
 
     /* container holding life/health levels */
     .healthContainer {
-        right: 910px;
+       left: 155px;
     }
 }
 
-@media screen and (min-width: 1700px) {
+@media screen and (min-width: 1888px) {
     .nameContainer {
-        left: 161px;
+        left: 200px;
     }
 
-       /* container holding life/health levels */
-       .healthContainer {
-        right: 960px;
+    /* container holding life/health levels */
+    .healthContainer {
+       left: 200px;
     }
-
 }
