@@ -26,9 +26,9 @@ const resolvers = {
     // finds user
     user: async (parent, id ) => {
       const user = await UserModel.findOne({ _id: id }).populate({ path: 'pets', populate: { path: 'health', model: 'Health' } })
-      if (user.pet && user.pet.health) {
-        updateHealthData(user.pet.id, user.pet)
-      }
+      // if (user.pet && user.pet.health) {
+      //   updateHealthData(user.pet.id, user.pet)
+      // }
       return user
     },
     health: async (parent, {}) => {

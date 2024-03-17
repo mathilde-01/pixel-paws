@@ -29,6 +29,24 @@ const typeDefs = `
     token: ID!
     user: User
   }
+
+  input HealthInput {
+    fun: Float
+    cleanliness: Float
+    hunger: Float
+    sleep: Float
+  }
+
+  input UpdatePetInput {
+    name: String
+    type: String
+    location: String
+    alive: Boolean
+    birthday: String
+    last_interaction: String
+    userId: ID
+    health: HealthInput
+  }
   
   type Query {
     users: [User]
@@ -52,18 +70,21 @@ const typeDefs = `
     ): Health
     updatePet(
       petId: ID!
-      name: String
-      type: String
-      location: String
-      alive: Boolean
-      birthday: String
-      last_interaction: String
-      userId: ID
-      health: HealthInput
+      updateData: UpdatePetInput
     ): Pet
-
-
   }
 `;
+
+// updatePet(
+//   petId: ID!
+//   name: String
+//   type: String
+//   location: String
+//   alive: Boolean
+//   birthday: String
+//   last_interaction: String
+//   userId: ID
+//   health: HealthInput
+// ): Pet
 
 module.exports = typeDefs;
