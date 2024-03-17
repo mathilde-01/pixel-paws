@@ -144,6 +144,11 @@ canvas {
     border-radius: 5px;
 }
 
+.btn-small:hover{
+    color: white;
+    opacity: 70%;
+}
+
 .mainHealthContainer {
     flex-basis: 42%;
     width: 326px;
@@ -371,6 +376,11 @@ form .row {
         top: 350px;
         width: 35%;
         left: 89px;
+    }
+
+    .btnContainer{
+        margin-top: 50px;
+    
     }
 }
 
