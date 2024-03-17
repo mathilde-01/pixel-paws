@@ -25,10 +25,10 @@ export default function ChoosePetForm({ submitHandler, changeHandler, nameState,
                         <div className="input-field col s12">
                             <select name="location" value={locationState} onChange={handleLocationChange}>
                                 <option value="" disabled> Pet's location</option>
-                                <option value="Forest">Forest</option>
-                                <option value="Underwater">Underwater</option>
-                                <option value="Desert">Desert</option>
-                                <option value="Clouds">Clouds</option>
+                                <option value="Forest" data-icon="./src/assets/backgrounds/pet-backgrounds/forest.jpg">Forest</option>
+                                <option value="Underwater" data-icon="./src/assets/backgrounds/pet-backgrounds/underwater.jpg">Underwater</option>
+                                <option value="Desert" data-icon="./src/assets/backgrounds/pet-backgrounds/desert.jpg">Desert</option>
+                                <option value="Clouds" data-icon="./src/assets/backgrounds/pet-backgrounds/clouds.jpg">Clouds</option>
                             </select>
                             <label>Home</label>
                         </div>
