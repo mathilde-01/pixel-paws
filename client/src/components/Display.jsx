@@ -15,7 +15,7 @@ export default function Display() {
     if (!token) {
         return (
             <div>
-                <p style={{ color: 'white' }}>please log in :3</p>
+                <p style={{ color: 'white' }}>please log in!</p>
             </div>
         );
     }
@@ -121,12 +121,32 @@ export default function Display() {
         }, 1000);
     };
 
+    let backgroundImage = '';
+    switch (pet.location) {
+        case 'Forest':
+            backgroundImage = 'url(./assets/backgrounds/pet-backgrounds/forest.jpg)';
+            break;
+        case 'Desert':
+            backgroundImage = 'url(./src/assets/backgrounds/pet-backgrounds/desert.jpg)';
+            break;
+        case 'Clouds':
+            backgroundImage = 'url(./src/assets/backgrounds/pet-backgrounds/clouds.jpg)';
+            break;
+        case 'Underwater':
+            backgroundImage = 'url(./src/assets/backgrounds/pet-backgrounds/underwater.jpg)';
+            break;
+        default:
+            // Default background image or fallback
+            backgroundImage = 'url(./src/assets/backgrounds/pet-backgrounds/forest.jpg)';
+            break;
+    }
+
     refetch()
 
     return (
         <div className="displayContainer">
             <div className="petContainer">
-                <div className="petCircle">
+                <div className="petCircle" style={{ backgroundImage }}>
                     <ThreeScene playAnimation={playAnimation} feedAnimation={feedAnimation} sleepAnimation={sleepAnimation} cleanAnimation={cleanAnimation}/>
                 </div>
                 <div className="petStand"></div>
