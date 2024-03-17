@@ -10,7 +10,7 @@ const resolvers = {
       // for (pet_id in pets) {
       //   pet = pets[pet_id];
       //   if (pet && pet.health) {
-      //     updateHealthData(pet_id,pet)
+      //     updateHealthData(pet)
       //   }
       // }
       return pets
@@ -19,16 +19,21 @@ const resolvers = {
     petById: async (parent, id ) => {
       const pet = await PetModel.findOne({ _id: id }).populate("health").populate("user");
       if (pet && pet.health) {
-        updateHealthData(id, pet)
+        updateHealthData(pet)
       }
       return pet
     },
     // finds user
     user: async (parent, id ) => {
       const user = await UserModel.findOne({ _id: id }).populate({ path: 'pets', populate: { path: 'health', model: 'Health' } })
-      // if (user.pet && user.pet.health) {
-      //   updateHealthData(user.pet.id, user.pet)
-      // }
+      
+      const lastPet = user.pets[user.pets.length - 1];
+
+      if (lastPet && lastPet.health) {
+
+        const updatedPet = updateHealthData(lastPet);
+      }
+
       return user
     },
     health: async (parent, {}) => {
@@ -119,19 +124,26 @@ const resolvers = {
         }
       );
     },
-    updatePet: async (parent, { petId, ...updateData }, context, info) => {
+    updatePet: async (parent, { petId, updateData }, context, info) => {
       try {
-        const updatedPet = await Pet.findByIdAndUpdate(
+        const { health, ...otherUpdateData } = updateData;
+  
+        updatedPet = await PetModel.findByIdAndUpdate(
           petId,
-          { $set: updateData },
+          { $set: otherUpdateData },
           { new: true, runValidators: true }
         );
 
-        if (!updatedPet) {
-          throw new Error('Pet not found');
+        // Update the health separately if it exists
+        if (health) {
+          await HealthModel.findByIdAndUpdate(
+            updatedPet.health._id,
+            { $set: health },
+            { new: true, runValidators: true }
+          );
         }
-
-        return updatedPet;
+        updatedPet = await updatedPet.populate('health')
+        return updatedPet
       } catch (error) {
         throw new Error(`Failed to update pet: ${error.message}`);
       }

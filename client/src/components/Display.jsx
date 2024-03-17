@@ -1,93 +1,36 @@
-import ThreeScene from './ThreeScene';
 import React, { useState } from 'react';
+import { useQuery, useMutation } from '@apollo/client';
+import { USER_QUERY } from '../utils/queries';
+import { UPDATE_PET_MUTATION } from '../utils/mutations';
+import ThreeScene from './ThreeScene';
 import decode from 'jwt-decode';
-import { useQuery } from '@apollo/client';
-import { USER_QUERY } from '../utils/queries'
-// import { useMutation } from '@apollo/client';
-// import { MUTATION } from '../utils/mutations';
 
 export default function Display() {
-    const token = localStorage.getItem('id_token');
-    const decoded = decode(token);
-    let pet = {name: 'name'};
-
     const [playAnimation, setPlayAnimation] = useState(false);
-    // const [playMutation] = useMutation(YOUR_MUTATION);
     const [cleanAnimation, setCleanAnimation] = useState(false);
     const [sleepAnimation, setSleepAnimation] = useState(false);
     const [feedAnimation, setFeedAnimation] = useState(false);
 
-    const handlePlayButtonClick = async () => {
-        // Change animation to "Roll"
-        setPlayAnimation(true);
+    const token = localStorage.getItem('id_token');
+    if (!token) {
+        return (
+            <div>
+                <p style={{ color: 'white' }}>please log in :3</p>
+            </div>
+        );
+    }
 
-        // get pet data
-        // add to bar
-        // call update pet
+    const decoded = decode(token);
+    let pet = { name: 'name' };
 
-        // Reset animation to "Idle_A" after 1 second
-        setTimeout(() => {
-            setPlayAnimation(false);
-        }, 900);
-    };
-
-    const handleCleanButtonClick = async () => {
-        // Change animation to "Clean"
-        setCleanAnimation(true);
-
-        // sleep mutation
-        // try {
-        //     await sleepMutation(); 
-        // } catch (error) {
-        //     console.error('Error performing mutation:', error);
-        // }
-
-        // Reset animation to "Idle_A" after 1 second
-        setTimeout(() => {
-            setCleanAnimation(false);
-        }, 800);
-    };
-
-    const handleSleepButtonClick = async () => {
-        // Change animation to "Death"
-        setSleepAnimation(true);
-
-        // sleep mutation
-        // try {
-        //     await sleepMutation(); 
-        // } catch (error) {
-        //     console.error('Error performing mutation:', error);
-        // }
-
-        // Reset animation to "Idle_A" after 1 second
-        setTimeout(() => {
-            setSleepAnimation(false);
-        }, 800);
-    };
-
-    const handleFeedButtonClick = async () => {
-        // Change animation to "Feed"
-        setFeedAnimation(true);
-
-        // sleep mutation
-        // try {
-        //     await sleepMutation(); 
-        // } catch (error) {
-        //     console.error('Error performing mutation:', error);
-        // }
-
-        // Reset animation to "Idle_A" after 1 second
-        setTimeout(() => {
-            setFeedAnimation(false);
-        }, 800);
-    };
-
-    const { loading, data } = useQuery(USER_QUERY, {
-        variables: { id: decoded.data._id}
+    const { loading, data, refetch } = useQuery(USER_QUERY, {
+        variables: { id: decoded.data._id }
     });
 
+    const [updatePetMutation] = useMutation(UPDATE_PET_MUTATION);
+
     if (loading) {
-        return <div>Loading...</div>; // Render loading indicator while data is being fetched
+        return <div>Loading...</div>;
     }
 
     const user = data?.user || {};
@@ -95,6 +38,90 @@ export default function Display() {
         const petArray = user.pets;
         pet = petArray[petArray.length - 1];
     }
+
+    let petFun = pet.health.fun;
+    let petClean = pet.health.cleanliness;
+    let petSleep = pet.health.sleep;
+    let petHunger = pet.health.hunger;
+
+    const today = Date.now();
+    const birthday = new Date(parseInt(pet.birthday));
+    const differenceInMilliseconds = Math.abs(today - birthday);
+    const millisecondsInDay = 1000 * 60 * 60 * 24;
+    const daysOld = Math.floor(differenceInMilliseconds / millisecondsInDay);
+    const days = daysOld > 1 ? 'days' : 'day';
+
+    const handleUpdatePet = async (petFun, petClean, petSleep, petHunger) => {
+        await refetch();
+        try {
+            await updatePetMutation({
+                variables: {
+                    petId: pet._id,
+                    updateData: {
+                        last_interaction: today.toString(),
+                        health: {
+                            fun: petFun,
+                            cleanliness: petClean,
+                            hunger: petHunger,
+                            sleep: petSleep
+                        }
+                    }
+                }
+            });
+        } catch (error) {
+            console.error('Failed to update pet:', error);
+        }
+    };
+
+    const handlePlayButtonClick = async () => {
+        petFun = pet.health.fun + 0.2;
+        if (petFun > 1) {
+            petFun = 1
+        }
+        await handleUpdatePet(petFun, petClean, petSleep, petHunger);
+        setPlayAnimation(true);
+        setTimeout(() => {
+            setPlayAnimation(false);
+        }, 1000);
+    };
+
+    const handleCleanButtonClick = async () => {
+        petClean = pet.health.cleanliness + 0.2;
+        if (petClean > 1) {
+            petClean = 1
+        }
+        await handleUpdatePet(petFun, petClean, petSleep, petHunger);
+        setCleanAnimation(true);
+        setTimeout(() => {
+            setCleanAnimation(false);
+        }, 1000);
+    };
+
+    const handleSleepButtonClick = async () => {
+        petSleep = pet.health.sleep + 0.2;
+        if (petSleep > 1) {
+            petSleep = 1
+        }
+        await handleUpdatePet(petFun, petClean, petSleep, petHunger);
+        setSleepAnimation(true);
+        setTimeout(() => {
+            setSleepAnimation(false);
+        }, 1000);
+    };
+
+    const handleFeedButtonClick = async () => {
+        petHunger = pet.health.hunger + 0.2;
+        if (petHunger > 1) {
+            petHunger = 1
+        }
+        await handleUpdatePet(petFun, petClean, petSleep, petHunger);
+        setFeedAnimation(true);
+        setTimeout(() => {
+            setFeedAnimation(false);
+        }, 1000);
+    };
+
+    refetch()
 
     return (
         <div className="displayContainer">
@@ -114,39 +141,34 @@ export default function Display() {
                 <a className="btn-small" id="orangeColor" onClick={handleFeedButtonClick}>Feed</a>
             </div>
             <div className="nameContainer">
-                <h3 id="name">{pet.name}</h3>
-                <p id="description">description</p>
+                <h3 className="displayHeader">{pet.name}</h3>
+                <p id="description">{pet.type}, {daysOld} {days} old</p>
             </div>
             {/* <div className='mainHealthContainer'> */}
                 <div className="healthContainer">
-                    <div className='bar'>
-                        <p>Health:</p>
-                        <div className="progress">
-                            <div className="determinate" id="healthBar" style={{ width: '70%' }}></div>
-                        </div>
-                    </div>
+                    <h3 className="displayHeader">Health:</h3>
                     <div className='bar'>
                         <p>Fun:</p>
                         <div className="progress">
-                            <div className="determinate" id="greenColor" style={{ width: '70%' }}></div>
+                            <div className="determinate" id="greenColor" style={{ width: (petFun * 100 + '%') }}></div>
                         </div>
                     </div>
                     <div className='bar'>
                         <p>Hunger:</p>
                         <div className="progress">
-                            <div className="determinate" id="orangeColor" style={{ width: '70%' }}></div>
+                            <div className="determinate" id="orangeColor" style={{ width: (petHunger * 100 + '%') }}></div>
                         </div>
                     </div>
                     <div className='bar'>
                         <p>Hygiene:</p>
                         <div className="progress">
-                            <div className="determinate" id="blueColor" style={{ width: '70%' }}></div>
+                            <div className="determinate" id="blueColor" style={{ width: (petClean * 100 + '%') }}></div>
                         </div>
                     </div>
                     <div className='bar'>
                         <p>Energy:</p>
                         <div className="progress">
-                            <div className="determinate" id="medPurpleColor" style={{ width: '70%' }}></div>
+                            <div className="determinate" id="medPurpleColor" style={{ width: (petSleep * 100 + '%') }}></div>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
-const updateHealthData = async (petId, data) => {
-  const currentTime = getCurrentTime();
+const updateHealthData = async (data) => {
+  const currentTime = Date.now();
   const lastInteractionTime = data.last_interaction || currentTime;
 
   const timeDifference = getTimeDifference(currentTime, lastInteractionTime);
@@ -12,18 +12,20 @@ const updateHealthData = async (petId, data) => {
   data.health.sleep -= barDrain;
   data.last_interaction = currentTime;
 
-//   const updatedPet = await Pet.findByIdAndUpdate(petId, { $set: newData });
-//   return updatedPet;
+  // const updatedPet = await Pet.findByIdAndUpdate(petId, { $set: newData });
+  // return updatedPet;
 
-return data;
+  return data;
 };
 
-getTimeDifference = (time1, time2) => {
+
+const getTimeDifference = (time1, time2) => {
   // Calculate the difference in milliseconds
-  const differenceInMilliseconds = Math.abs(time1.getTime() - time2.getTime());
+  const differenceInMilliseconds = Math.abs(time1 - time2);
   // Convert milliseconds to seconds
   const differenceInSeconds = Math.floor(differenceInMilliseconds / 1000);
+
   return differenceInSeconds;
 };
 
-module.exports = { updateHealthData };
+module.exports = updateHealthData

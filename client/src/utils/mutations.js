@@ -37,21 +37,10 @@ export const ADD_PET = gql`
 `;
 
 export const UPDATE_PET_MUTATION = gql`
-  mutation UpdatePet(
-    $petId: ID!
-    $last_interaction: String
-    $health: HealthInput
-  ) {
-    updatePet(
-      petId: $petId
-      last_interaction: $last_interaction
-      health: $health
-    ) {
-      _id
-      birthday
+  mutation UpdatePet($petId: ID!, $updateData: UpdatePetInput!) {
+    updatePet(petId: $petId, updateData: $updateData) {
       last_interaction
       health {
-        _id
         fun
         cleanliness
         hunger
