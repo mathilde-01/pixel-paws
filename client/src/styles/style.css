@@ -154,6 +154,7 @@ but put them back if they help with the layout */
 }
 
 .mainHealthContainer {
+    flex-basis: 42%;
     width: 326px;
     padding: 5px;
 }
@@ -406,6 +407,7 @@ form .row {
 @media screen and (min-width: 1000px) {
     /* container holding life/health levels */
     .healthContainer {
+        flex-basis: 42%;
         position: absolute;
         width: 34%;
         top: 465px;
@@ -465,14 +467,14 @@ form .row {
     }
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1400px) {
     .nameContainer {
-        left: 149px;
+        left: 139px;
     }
 
     /* container holding life/health levels */
     .healthContainer {
-        right: 840px;
+        right: 784px;
     }
 }
 
