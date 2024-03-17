@@ -10,6 +10,7 @@ import LandingPage from './pages/LandingPage';
 import DisplayPage from './pages/DisplayPage';
 import NoMatch from './pages/NoMatch';
 import Logout from './components/Logout.jsx'
+import ErrorPage from './components/Error.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,10 @@ const router = createBrowserRouter([
       }, {
         path: '/logout',
         element: < Logout />,
-      },
+      }, {
+        path: '*',
+        element: <ErrorPage />
+      }
     ],
   },
 ]);
