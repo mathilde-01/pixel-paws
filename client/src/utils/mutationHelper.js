@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { USER_QUERY } from '../utils/queries'
 import { useMutation } from '@apollo/client';
-import { MUTATION } from '../utils/mutations';
+import { UPDATE_PET_MUTATION } from '../utils/mutations';
 
 function updatePet (petId, time, fun, sleep, hunger, clenliness) {
     const [updatePet] = useMutation(UPDATE_PET_MUTATION);

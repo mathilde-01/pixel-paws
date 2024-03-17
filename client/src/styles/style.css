@@ -3,8 +3,8 @@ body {
     font-family: "Red Hat Mono", monospace;
     min-height: 100vh;
     flex-direction: column;
-    background-image: url('../../public/backgrounds/background.png');
-    background-image: url('../../public/backgrounds/background.png'), linear-gradient(#060623, #8f7ec8);
+    background-image: url('../assets/backgrounds/background.png');
+    background-image: url('../assets/backgrounds/background.png'), linear-gradient(#060623, #8f7ec8);
     background-size: 400px;
 
 }
@@ -105,7 +105,7 @@ footer {
     justify-content: center;
     max-width: 700px;
     max-height: 700px;
-    background-image: url('../../public/backgrounds/pet-backgrounds/forest.png');
+    background-image: url('../assets/backgrounds/pet-backgrounds/forest.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
