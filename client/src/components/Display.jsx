@@ -105,13 +105,13 @@ export default function Display() {
                 <div className="petStand"></div>
             </div>
             <div className="btnContainer">
-                <a className="waves-effect waves-light btn-small" id="greenColor" onClick={handlePlayButtonClick}>Play</a>
+                <a className="waves-effect btn-small" id="greenColor" onClick={handlePlayButtonClick}>Play</a>
 
-                <a className="waves-effect waves-light btn-small" id="blueColor" onClick={handleCleanButtonClick}>Clean</a>
+                <a className="waves-effect btn-small" id="blueColor" onClick={handleCleanButtonClick}>Clean</a>
 
-                <a className="waves-effect waves-light btn-small" id="medPurpleColor" onClick={handleSleepButtonClick}>Sleep</a>
+                <a className="waves-effect btn-small" id="medPurpleColor" onClick={handleSleepButtonClick}>Sleep</a>
 
-                <a className="waves-effect waves-light btn-small" id="orangeColor" onClick={handleFeedButtonClick}>Feed</a>
+                <a className="waves-effect btn-small" id="orangeColor" onClick={handleFeedButtonClick}>Feed</a>
             </div>
             <div className="nameContainer">
                 <h3 id="name">{pet.name}</h3>
