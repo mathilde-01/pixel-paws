@@ -304,24 +304,20 @@ form .row {
     /* form welcome */
     h5 {
         color: white;
-
     }
 
     .btn {
         background-color: #19173c;
         font-family: "Silkscreen", sans-serif;
-
     }
 
     .petContainer {
         flex-basis: 100%;
         padding: 15px;
-
     }
 
     .btn-small {
         width: 60px;
-
     }
 
 }
@@ -389,7 +385,7 @@ form .row {
     .healthContainer {
         position: absolute;
         width: 34%;
-        top: 450px;
+        top: 470px;
         left: 108px;
     }
 }
@@ -404,7 +400,6 @@ form .row {
        left: 125px;
        top: 475px;
     }
-
 }
 
 @media screen and (min-width: 1348px) {
