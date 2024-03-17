@@ -403,17 +403,18 @@ form .row {
     }
 }
 
+
 @media screen and (min-width: 1000px) {
     .nameContainer {
-        left: 110px;
+        left: 109px;
     }
 
     /* container holding life/health levels */
     .healthContainer {
         position: absolute;
         width: 34%;
-        top: 450px;
-        right: 565px;
+        top: 465px;
+        right: 548px;
     }
 }
 
@@ -424,6 +425,11 @@ form .row {
         flex-basis: 42%;
         width: 34%;
     }
+      /* container holding life/health levels */
+      .healthContainer {
+        right: 669px;
+    }
+
 }
 
 @media screen and (min-width: 1349px) {
@@ -437,19 +443,13 @@ form .row {
 
     /* container holding life/health levels */
     .healthContainer {
-        position: absolute;
-        width: 34%;
-        top: 450px;
-        right: 638px;
+        right: 755px;
     }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1360px) {
     .nameContainer {
-        left: 139px;
-        top: 45vh;
-        flex-basis: 42%;
-        flex-wrap: wrap;
+        left: 135px;
         width: 34%;
 
     }
@@ -460,10 +460,7 @@ form .row {
 
     /* container holding life/health levels */
     .healthContainer {
-        position: absolute;
-        width: 34%;
-        top: 450px;
-        right: 668px;
+        right: 763px;
     }
 }
 
@@ -474,23 +471,36 @@ form .row {
 
     /* container holding life/health levels */
     .healthContainer {
-        position: absolute;
-        width: 34%;
-        top: 450px;
-        right: 710px;
+        right: 840px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    /* container holding life/health levels */
+    .healthContainer {
+        right: 890px;
     }
 }
 
 @media screen and (min-width: 1600px) {
     .nameContainer {
-        left: 210px;
+        left: 155px;
     }
 
     /* container holding life/health levels */
     .healthContainer {
-        position: absolute;
-        width: 34%;
-        top: 495px;
-        right: 850px;
+        right: 910px;
     }
+}
+
+@media screen and (min-width: 1700px) {
+    .nameContainer {
+        left: 161px;
+    }
+
+       /* container holding life/health levels */
+       .healthContainer {
+        right: 960px;
+    }
+
 }
