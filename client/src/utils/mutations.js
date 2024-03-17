@@ -37,9 +37,26 @@ export const ADD_PET = gql`
 `;
 
 export const UPDATE_PET_MUTATION = gql`
-  mutation UpdatePetOnLoad($petId: ID!) {
-    updatePetOnLoad(petId: $petId) {
+  mutation UpdatePet(
+    $petId: ID!
+    $last_interaction: String
+    $health: HealthInput
+  ) {
+    updatePet(
+      petId: $petId
+      last_interaction: $last_interaction
+      health: $health
+    ) {
       _id
+      birthday
+      last_interaction
+      health {
+        _id
+        fun
+        cleanliness
+        hunger
+        sleep
+      }
     }
   }
 `;
