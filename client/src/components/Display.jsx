@@ -128,7 +128,7 @@ export default function Display() {
     let backgroundImage = '';
     switch (pet.location) {
         case 'Forest':
-            backgroundImage = `url(${underwater})`;
+            backgroundImage = `url(${forest})`;
             break;
         case 'Desert':
             backgroundImage = `url(${desert})`;
@@ -141,7 +141,7 @@ export default function Display() {
             break;
         default:
             // Default background image or fallback
-            backgroundImage = 'url(./src/assets/backgrounds/pet-backgrounds/forest.jpg)';
+            backgroundImage = `url(${forest})`;
             break;
     }
 

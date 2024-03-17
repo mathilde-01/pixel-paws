@@ -1,5 +1,9 @@
 import React, { useEffect } from 'react';
 import M from 'materialize-css';
+import forest from '../../assets/backgrounds/pet-backgrounds/forest.jpg'
+import desert from '../../assets/backgrounds/pet-backgrounds/desert.jpg'
+import clouds from '../../assets/backgrounds/pet-backgrounds/clouds.jpg'
+import underwater from '../../assets/backgrounds/pet-backgrounds/underwater.jpg'
 
 export default function ChoosePetForm({ submitHandler, changeHandler, nameState, locationState }) {
     useEffect(() => {
@@ -25,10 +29,10 @@ export default function ChoosePetForm({ submitHandler, changeHandler, nameState,
                         <div className="input-field col s12">
                             <select name="location" value={locationState} onChange={handleLocationChange}>
                                 <option value="" disabled> Pet's location</option>
-                                <option value="Forest" data-icon="./src/assets/backgrounds/pet-backgrounds/forest.jpg">Forest</option>
-                                <option value="Underwater" data-icon="./src/assets/backgrounds/pet-backgrounds/underwater.jpg">Underwater</option>
-                                <option value="Desert" data-icon="./src/assets/backgrounds/pet-backgrounds/desert.jpg">Desert</option>
-                                <option value="Clouds" data-icon="./src/assets/backgrounds/pet-backgrounds/clouds.jpg">Clouds</option>
+                                <option value="Forest" data-icon={forest}>Forest</option>
+                                <option value="Underwater" data-icon={underwater}>Underwater</option>
+                                <option value="Desert" data-icon={desert}>Desert</option>
+                                <option value="Clouds" data-icon={clouds}>Clouds</option>
                             </select>
                             <label>Home</label>
                         </div>
