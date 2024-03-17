@@ -38,6 +38,8 @@ function Login() {
     }
     catch (err){
       console.log(err);
+      // pop up alert (possible to add package for styling)
+      alert("Couldn't find your Pixel Paws Account")
     }
   }
 
