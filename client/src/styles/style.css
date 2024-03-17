@@ -76,6 +76,21 @@ footer {
 }
 
 
+.card{
+    background-color: transparent;
+    margin: 20px 20px 20px 20px;
+    justify-content: center;
+    padding: 5px;
+
+}
+
+.guide-text {
+    color: #FFF; 
+    font-family: 'Red Hat Mono', monospace; 
+    text-align: center; 
+    padding: 15px;
+}
+
 /* ///// Display Page ////////////////////////////////////// */
 
 .displayContainer {
@@ -256,6 +271,8 @@ form .row {
 .btn {
     background-color: #19173c;
     font-family: "Silkscreen", sans-serif;
+    margin: 10px;
+    justify-content: center;
 }
 
 /* Pet Creation */
@@ -302,6 +319,9 @@ form .row {
 
 }
 
+#btnLeft{
+    margin-left: 22px;
+}
 
 @media screen and (max-width: 360px) {
     .displayContainer {
@@ -384,6 +404,10 @@ form .row {
         margin-top: 50px;
     
     }
+    #btnLeft{
+        margin-left: 160px;
+    }
+    
 }
 
 @media screen and (min-width: 998px) {
@@ -399,6 +423,9 @@ form .row {
         width: 34%;
         top: 470px;
         left: 108px;
+    }
+    #btnLeft{
+        margin-left: 250px;
     }
 }
 
