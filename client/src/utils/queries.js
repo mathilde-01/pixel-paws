@@ -6,6 +6,7 @@ export const USER_QUERY = gql`
       email
       pets {
         _id
+        type
         name
         location
         birthday

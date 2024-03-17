@@ -180,11 +180,13 @@ canvas {
     padding: 15px;
 }
 
-#name {
+.displayHeader {
     font-family: "Silkscreen", sans-serif;
     font-size: 24px;
     margin: 0;
     margin-bottom: 5px;
+    color: white;
+    text-align: center;
 }
 
 #description {

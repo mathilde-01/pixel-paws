@@ -9,6 +9,7 @@ import PetCreationPage from './pages/PetCreationPage'
 import LandingPage from './pages/LandingPage';
 import DisplayPage from './pages/DisplayPage';
 import NoMatch from './pages/NoMatch';
+import Logout from './components/Logout.jsx'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,9 @@ const router = createBrowserRouter([
       }, {
         path: '/Display',
         element: <DisplayPage />
+      }, {
+        path: '/logout',
+        element: < Logout />,
       },
     ],
   },
@@ -38,7 +42,4 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <RouterProvider router={router} />
-  // <React.StrictMode>
-  //   <App/>
-  // </React.StrictMode>,
 )

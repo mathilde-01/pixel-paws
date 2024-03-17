@@ -6,6 +6,14 @@ import decode from 'jwt-decode';
 
 export default function SignUp() {
     const token = localStorage.getItem('id_token');
+    if (!token) {
+        return (
+            <div>
+            <p style={{color: 'white'}}>please log in :3</p>
+            </div>
+        )
+    }
+    ;
     const decoded = decode(token);
 
     const [formState, setFormState] = useState({ name: '', location: ''});

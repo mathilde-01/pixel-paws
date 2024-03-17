@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 const ThreeScene = ({ playAnimation, feedAnimation, sleepAnimation, cleanAnimation }) => {
   const canvasRef = useRef();
@@ -40,24 +40,9 @@ const ThreeScene = ({ playAnimation, feedAnimation, sleepAnimation, cleanAnimati
     scene.add(directionalLight);
     scene.add(directionalLight.target);
 
-    function dumpObject(obj, lines = [], isLast = true, prefix = '') {
-      const localPrefix = isLast ? '└─' : '├─';
-      lines.push(
-        `${prefix}${prefix ? localPrefix : ''}${obj.name || '*no-name*'} [${
-          obj.type
-        }]`
-      );
-      const newPrefix = prefix + (isLast ? '  ' : '│ ');
-      const lastNdx = obj.children.length - 1;
-      obj.children.forEach((child, ndx) => {
-        const isLast = ndx === lastNdx;
-        dumpObject(child, lines, isLast, newPrefix);
-      });
-      return lines;
-    }
-
     let dragon;
-    let mesh;
+    const mixers = [];
+    let currentAction = idleAction;
 
     const gltfLoader = new GLTFLoader();
     gltfLoader.load('./animals/dragon.glb', (gltf) => {
@@ -68,15 +53,6 @@ const ThreeScene = ({ playAnimation, feedAnimation, sleepAnimation, cleanAnimati
       dragon.scale.set(2, 2, 2);
       scene.add(dragon);
 
-      mesh = dragon.getObjectByName('Dragon_LOD3');
-      mesh.morphTargetDictionary = mesh.userData.targetNames;
-      console.log(mesh.morphTargetDictionary);
-    });
-
-    const mixers = [];
-    let currentAction = idleAction;
-
-    gltfLoader.load('./animals/animations/dragon_animations.glb', (gltf) => {
       const mixer = new THREE.AnimationMixer(dragon);
       const clips = gltf.animations;
 
@@ -92,20 +68,25 @@ const ThreeScene = ({ playAnimation, feedAnimation, sleepAnimation, cleanAnimati
       sleepAction = mixer.clipAction(sleepClip);
       cleanAction = mixer.clipAction(cleanClip);
 
-      currentAction = idleAction; // Ensure currentAction is always initialized
+      currentAction = idleAction;
       currentAction.play();
 
       mixers.push(mixer);
 
-    });
+    }, (xhr) => {
+      console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+    }, (error) => {
+      console.error('An error occurred while loading animations:', error);
+    });      
+    
 
-    const resizeRendererToDisplaySize = (renderer) => {
+    const resizeRendererToDisplaySize = async (renderer) => {
       const canvas = renderer.domElement;
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
       const needResize = canvas.width !== width || canvas.height !== height;
       if (needResize) {
-        renderer.setSize(width, height, false);
+        await renderer.setSize(width, height, false);
       }
       return needResize;
     };
@@ -129,15 +110,15 @@ const ThreeScene = ({ playAnimation, feedAnimation, sleepAnimation, cleanAnimati
         currentAction = rollAction;
       } else if (feedAnimation && currentAction !== feedAction) {
         currentAction.stop();
-        feedAction.play()
+        feedAction.play();
         currentAction = feedAction;
       } else if (sleepAnimation && currentAction !== sleepAction) {
         currentAction.stop();
-        sleepAction.play()
+        sleepAction.play();
         currentAction = sleepAction;
       } else if (cleanAnimation && currentAction !== cleanAction) {
         currentAction.stop();
-        cleanAction.play()
+        cleanAction.play();
         currentAction = cleanAction;
       } else if (!playAnimation && !feedAnimation && !sleepAnimation && !cleanAnimation && currentAction !== idleAction) {
         currentAction.stop();
