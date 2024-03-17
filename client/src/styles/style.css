@@ -380,8 +380,7 @@ form .row {
 
     .nameContainer {
         position: absolute;
-        flex-wrap: wrap;
-        top: 45vh;
+        top: 350px;
         width: 35%;
         left: 89px;
     }
@@ -399,22 +398,24 @@ form .row {
         position: absolute;
         width: 34%;
         top: 450px;
-        right: 460px;
+        right: 550px;
     }
 }
 
 
 @media screen and (min-width: 1000px) {
-    .nameContainer {
-        left: 109px;
-    }
-
     /* container holding life/health levels */
     .healthContainer {
         position: absolute;
         width: 34%;
         top: 465px;
-        right: 548px;
+        right: 554px;
+    }
+}
+
+@media screen and (min-width: 1194px){
+    .healthContainer {
+        right: 670px;
     }
 }
 
@@ -432,7 +433,7 @@ form .row {
 
 }
 
-@media screen and (min-width: 1349px) {
+@media screen and (min-width: 1348px) {
     .nameContainer {
         left: 135px;
     }
