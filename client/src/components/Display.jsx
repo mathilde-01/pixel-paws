@@ -4,6 +4,10 @@ import { USER_QUERY } from '../utils/queries';
 import { UPDATE_PET_MUTATION } from '../utils/mutations';
 import ThreeScene from './ThreeScene';
 import decode from 'jwt-decode';
+import forest from '../assets/backgrounds/pet-backgrounds/forest.jpg'
+import desert from '../assets/backgrounds/pet-backgrounds/desert.jpg'
+import clouds from '../assets/backgrounds/pet-backgrounds/clouds.jpg'
+import underwater from '../assets/backgrounds/pet-backgrounds/underwater.jpg'
 
 export default function Display() {
     const [playAnimation, setPlayAnimation] = useState(false);
@@ -124,16 +128,16 @@ export default function Display() {
     let backgroundImage = '';
     switch (pet.location) {
         case 'Forest':
-            backgroundImage = 'url(./assets/backgrounds/pet-backgrounds/forest.jpg)';
+            backgroundImage = `url(${underwater})`;
             break;
         case 'Desert':
-            backgroundImage = 'url(./src/assets/backgrounds/pet-backgrounds/desert.jpg)';
+            backgroundImage = `url(${desert})`;
             break;
         case 'Clouds':
-            backgroundImage = 'url(./src/assets/backgrounds/pet-backgrounds/clouds.jpg)';
+            backgroundImage = `url(${clouds})`;
             break;
         case 'Underwater':
-            backgroundImage = 'url(./src/assets/backgrounds/pet-backgrounds/underwater.jpg)';
+            backgroundImage = `url(${underwater})`;
             break;
         default:
             // Default background image or fallback
