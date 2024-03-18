@@ -94,16 +94,32 @@ footer {
 .guide-text {
     color: #FFF; 
     font-family: 'Red Hat Mono', monospace; 
-    text-align: center; 
-    background-color: rgba(24, 21, 56, 0.8); 
-    border-radius: 10px; 
-    margin: 20px 0;
+    text-align: center;
+    margin-bottom: 0;  
     padding: 15px;
 }
 
 .guide-container{
+    width: 100%;
     flex-basis: 42%;
     text-align: center;
+    background-color: #0e0c28cd;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    display: flex; 
+    flex-direction: column;
+    align-content: center;
+}
+
+.userGuideHeader {
+    font-family: "Silkscreen", sans-serif;
+    font-size: 20px;
+    margin: 20px 5% 5px 5%;
+    color: white;
+    text-align: center;
+    background-color: #0e0c28cd;;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 .displayHeader {
@@ -113,14 +129,22 @@ footer {
     margin-bottom: 5px;
     color: white;
     text-align: center;
-    background-color: #0e0c28;
-    padding: 20px;
-    border-radius: 5px;
-    max-height: 65px;
 }
 
-img{
-    width: 346px;
+.petContainer {
+    flex-basis: 42%;
+    padding: 15px;
+}
+
+.imageContainer {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-self: center;
+}
+
+.imageContainer img {
+    width: 80vw;
 }
 
 
@@ -129,7 +153,9 @@ img{
 
 .displayContainer {
     display: flex;
-    flex-basis: 42%;
+    flex-direction: column;
+    justify-content: center;
+    /* flex-basis: 42%; */
     width: 90%;
     margin: 20px;
 }
@@ -268,7 +294,7 @@ h5 {
 .formContainer {
     font-family: "Silkscreen", sans-serif;
     width: 80%;
-    background-color: #26285a;
+    background-color: #0e0c28cd;
     margin: 10%;
     border-radius: 10px;
     padding: 20px;
@@ -294,11 +320,11 @@ form .row {
 }
 
 .btn {
-    background-color: #19173c;
+    background-color: #26285a;
     font-family: "Silkscreen", sans-serif;
-    margin: 10px;
+    /* margin: 10px; */
     justify-content: center;
-    width: 150px;
+    width: 145px;
 }
 
 /* Pet Creation */
@@ -383,6 +409,16 @@ form .row {
         height: cal(100vh - 60px);
     }
 
+    .imageContainer img {
+        width: 30vw;
+        height: 33vw;
+    }
+
+    .userGuideHeader {
+        font-size: 24px;
+        margin: 20px 6% 20px 6%;
+    }
+
     /* where pet lives in circle on display page */
     .petCircle {
         position: relative;
@@ -437,7 +473,8 @@ form .row {
 
     .guide-container{
         margin: 20px;
-        flex-basis: 42%;
+        flex-basis: 60%;
+        align-content: center;
     }
     
     
@@ -479,6 +516,7 @@ form .row {
     }
     .guide-container{
         margin-top: 40px;
+        align-self: center;
     }
 }
 
