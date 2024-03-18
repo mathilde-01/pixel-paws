@@ -79,28 +79,57 @@ footer {
     margin-left: 5%;
 }
 
+/* ///// Guide Page/////////////////////// */
 
 .card{
     background-color: transparent;
     margin: 20px 20px 20px 20px;
     justify-content: center;
     padding: 5px;
-
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .guide-text {
     color: #FFF; 
     font-family: 'Red Hat Mono', monospace; 
     text-align: center; 
+    background-color: rgba(24, 21, 56, 0.8); 
+    border-radius: 10px; 
+    margin: 20px 0;
     padding: 15px;
 }
+
+.guide-container{
+    flex-basis: 42%;
+    text-align: center;
+}
+
+.displayHeader {
+    font-family: "Silkscreen", sans-serif;
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 5px;
+    color: white;
+    text-align: center;
+    background-color: #0e0c28;
+    padding: 20px;
+    border-radius: 5px;
+    max-height: 65px;
+}
+
+img{
+    width: 346px;
+}
+
+
 
 /* ///// Display Page ////////////////////////////////////// */
 
 .displayContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-basis: 42%;
     width: 90%;
     margin: 20px;
 }
@@ -199,17 +228,6 @@ canvas {
     padding: 15px;
 }
 
-.displayHeader {
-    font-family: "Silkscreen", sans-serif;
-    font-size: 24px;
-    margin: 0;
-    margin-bottom: 5px;
-    color: white;
-    text-align: center;
-    background-color: #0e0c28;
-    padding: 20px;
-    border-radius: 5px;
-}
 
 #description {
     margin: 0;
@@ -280,6 +298,7 @@ form .row {
     font-family: "Silkscreen", sans-serif;
     margin: 10px;
     justify-content: center;
+    width: 150px;
 }
 
 /* Pet Creation */
@@ -324,10 +343,6 @@ form .row {
 #user_name {
     font-family: "Silkscreen", sans-serif;
 
-}
-
-#btnLeft{
-    margin-left: 22px;
 }
 
 @media screen and (max-width: 360px) {
@@ -414,6 +429,17 @@ form .row {
     #btnLeft{
         margin-left: 160px;
     }
+    .card{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .guide-container{
+        margin: 20px;
+        flex-basis: 42%;
+    }
+    
     
 }
 
@@ -445,6 +471,14 @@ form .row {
       .healthContainer {
        left: 125px;
        top: 475px;
+    }
+    .card{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .guide-container{
+        margin-top: 40px;
     }
 }
 
@@ -487,13 +521,7 @@ form .row {
     .healthContainer {
        left: 200px;
     }
+    
 }
 
-.guide-text {
-    color: #FFF; 
-    font-family: 'Red Hat Mono', monospace; 
-    text-align: center; 
-    background-color: rgba(24, 21, 56, 0.8); 
-    border-radius: 10px; 
-    margin: 20px 0;
-}
+
