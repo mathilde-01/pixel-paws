@@ -3,14 +3,13 @@ import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_PET } from "../../utils/mutations";
 import decode from 'jwt-decode';
+import Login from "../Login";
 
-export default function SignUp() {
+export default function ChoosePet() {
     const token = localStorage.getItem('id_token');
     if (!token) {
         return (
-            <div>
-            <p style={{color: 'white'}}>please log in :3</p>
-            </div>
+            < Login />
         )
     }
     ;

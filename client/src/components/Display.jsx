@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import AdoptNew from './AdoptNew';
 import { useQuery, useMutation } from '@apollo/client';
 import { USER_QUERY } from '../utils/queries';
 import { UPDATE_PET_MUTATION } from '../utils/mutations';
 import ThreeScene from './ThreeScene';
+import ChoosePet from './ChoosePet/ChoosePet'
 import decode from 'jwt-decode';
 import forest from '../assets/backgrounds/pet-backgrounds/forest.jpg'
 import desert from '../assets/backgrounds/pet-backgrounds/desert.jpg'
@@ -15,14 +18,9 @@ export default function Display() {
     const [sleepAnimation, setSleepAnimation] = useState(false);
     const [feedAnimation, setFeedAnimation] = useState(false);
 
+    const navigate = useNavigate();
+
     const token = localStorage.getItem('id_token');
-    if (!token) {
-        return (
-            <div>
-                <p style={{ color: 'white' }}>please log in!</p>
-            </div>
-        );
-    }
 
     const decoded = decode(token);
     let pet = { name: 'name' };
@@ -39,6 +37,11 @@ export default function Display() {
 
     const user = data?.user || {};
     if (user) {
+        if (user.pets.length == 0) {
+            return (
+                <ChoosePet />
+            )
+        }
         const petArray = user.pets;
         pet = petArray[petArray.length - 1];
     }
@@ -47,6 +50,12 @@ export default function Display() {
     let petClean = pet.health.cleanliness;
     let petSleep = pet.health.sleep;
     let petHunger = pet.health.hunger;
+
+    if (petFun <= 0 || petClean <= 0 || petSleep <= 0 || petHunger <= 0) {
+        return (
+            < AdoptNew />
+        )
+    }
 
     const today = Date.now();
     const birthday = new Date(parseInt(pet.birthday));
