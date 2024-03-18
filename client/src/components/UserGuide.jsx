@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import pixelPal from 
+import pixelPal from '../assets/pixel-pal/pixelpal.png';
 
 
 
@@ -11,8 +11,8 @@ export default function UserGuide() {
      <h1 className='displayHeader'>Welcome to Pixel Pals!</h1>
       <div className='card'>
         <div className="petContainer">
-          <div className='petCircle'></div>
-        {/* transparent png of pet */}
+          {/* <div className=''></div> */}
+            <img src={pixelPal} alt="Example Pal" className='pixelPal'/> 
         </div>
         <div className='guide-container'>
           <p className='guide-text'> 

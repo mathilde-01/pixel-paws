@@ -119,6 +119,10 @@ footer {
     max-height: 65px;
 }
 
+img{
+    width: 346px;
+}
+
 
 
 /* ///// Display Page ////////////////////////////////////// */
@@ -456,16 +460,6 @@ form .row {
     #btnLeft{
         margin-left: 250px;
     }
-    .card{
-        display: flex;
-        flex-wrap: wrap; 
-        flex-direction: row; 
-    }
-    .guide-container{
-        margin: 60px;
-        flex-basis:42%;
-    }
-
 }
 
 
@@ -484,9 +478,8 @@ form .row {
         flex-direction: row;
     }
     .guide-container{
-        margin-top: 100px;
+        margin-top: 40px;
     }
-   
 }
 
 @media screen and (min-width: 1348px) {
@@ -505,15 +498,6 @@ form .row {
         left: 135px;
         top: 544px;
     }
-    .card{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-
-    .guide-container{
-        margin-top: 150px;
-    }
 }
 
 @media screen and (min-width: 1600px) {
@@ -526,11 +510,6 @@ form .row {
        left: 155px;
       
     }
-    .card{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
 }
 
 @media screen and (min-width: 1888px) {
@@ -541,11 +520,6 @@ form .row {
     /* container holding life/health levels */
     .healthContainer {
        left: 200px;
-    }
-    .card{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
     }
     
 }
