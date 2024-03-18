@@ -206,6 +206,9 @@ canvas {
     margin-bottom: 5px;
     color: white;
     text-align: center;
+    background-color: #0e0c28;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 #description {
